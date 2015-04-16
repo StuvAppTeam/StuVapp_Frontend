@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
+#Login mit Devise
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
