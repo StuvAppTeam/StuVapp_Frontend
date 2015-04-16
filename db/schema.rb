@@ -11,9 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150416090902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "offer_blackboards", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.float    "totalPrice"
+    t.integer  "image_id"
+    t.string   "street"
+    t.string   "city"
+    t.integer  "zipcode"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.boolean  "condition"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end
