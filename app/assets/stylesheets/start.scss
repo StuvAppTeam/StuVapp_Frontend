@@ -1,0 +1,28 @@
+// Place all the styles related to the start controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar.no-bg{
+  background: none;
+}
+
+.cover-image{
+  height: 100%;
+  background: url(rav.jpg) no-repeat center center;
+  background-size: cover;
+
+}
+
+.fieldset {
+  border: none;
+  text-align: center;
+  background: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: -227.5px;
+  padding: 0;
+  width: 455px;
+}
+
