@@ -1,6 +1,16 @@
-<div>
-	<fieldset>
+<div class="search-box">
+	<div style="padding: 2%;">
+
+		<%= radio_button_tag 'options', 'wohnungsmarkt'%>
+		<%= label_tag 'options_wohnungsmarkt', "Wohnungsmarkt"  %>
 		
-	</fieldset>
-	
+		<%= radio_button_tag 'options','sbrett'%>
+		<%= label_tag 'options_sbrett', "Schwarzes Brett" %>
+		
+		<br />
+		<%=  params[:options].inspect%>
+		<% if params[:options] == "wohnungsmarkt" %>
+		<%= render "search_form" %>
+		<% end %>
+	</div>
 </div>
