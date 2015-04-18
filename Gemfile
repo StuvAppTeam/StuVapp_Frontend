@@ -20,6 +20,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
 #Facebooklogin
 gem 'omniauth-facebook'
+#Puma Webserver
+gem 'puma'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
