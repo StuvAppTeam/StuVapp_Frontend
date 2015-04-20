@@ -10,14 +10,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       #redirect_to new_user_registration_url
       user = User.new
-      user.apply_omniauth(auth)
-      if user.save(:validate => false)
-        flash[:notice] = "Account created and signed in successfully."
-        sign_in_and_redirect(:user, user)
-      else
-        flash[:error] = "Error while creating a user account. Please try again."
-        redirect_to root_url
-      end
+      @user = User.create( email: @user.email || "" )
+      @identity.update_attribute( :user_id, @user.id )
     end
   end
 end
