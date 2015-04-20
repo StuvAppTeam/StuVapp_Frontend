@@ -23,7 +23,8 @@
 
 html,
 body {
-  background: url(rav.jpg) no-repeat center fixed;
+  background: no-repeat center fixed;
+  background-image: image-url("rav.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
