@@ -1,16 +1,22 @@
 <div class="search-box">
 	<div style="padding: 2%;">
 
-		<%= radio_button_tag 'options', 'wohnungsmarkt'%>
-		<%= label_tag 'options_wohnungsmarkt', "Wohnungsmarkt"  %>
-		
-		<%= radio_button_tag 'options','sbrett'%>
-		<%= label_tag 'options_sbrett', "Schwarzes Brett" %>
-		
-		<br />
-		<%=  params[:options].inspect%>
-		<% if params[:options] == "wohnungsmarkt" %>
-		<%= render "search_form" %>
-		<% end %>
+		<div class="btn-group" style="padding-bottom: 2%;">
+			<button type="button" class="btn active options" id="option_wohnungsmarkt">
+				Wohnungsmarkt
+			</button>
+			<button type="button" class="btn options" id="option_sbrett">
+				Schwarzes Brett
+			</button>
+		</div>
+
+		<div id="search_form_apartment">
+			<%= render "search_form_apartment" %>
+		</div>
+
+		<div id="search_form_blackboard">
+			<%= render "search_form_blackboard" %>
+		</div>
+
 	</div>
 </div>

@@ -34,16 +34,29 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
 }
 
 .footer{
-    background:black;
+    background: #000000;
     position: fixed !important;
     bottom: 0px;
+    text-align: left;
 }
 
 .search-box{
   background-color:rgba(255,255,255,0.8);
   margin:0 auto;
   width: 720px;
+}
+.options{
+  background: transparent;
+  width: 50%;
+}
+.options.active{
+  background-color: #E2001A;
+}
+
+.btn-group{
+  width: 90%;
 }
