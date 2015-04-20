@@ -9,7 +9,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       #redirect_to new_user_registration_url
-      user = User.new
       @user = User.create( email: @user.email || "" )
       @identity.update_attribute( :user_id, @user.id )
     end
