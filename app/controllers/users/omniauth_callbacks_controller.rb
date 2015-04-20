@@ -8,9 +8,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      #redirect_to new_user_registration_url
+      redirect_to new_user_registration_url
       @user = User.create( email: @user.email || "" )
-      @identity.update_attribute( :user_id, @user.id )
+      @identity.update_attribute( :user_id, @user.id
+
     end
   end
 end
