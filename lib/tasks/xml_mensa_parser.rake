@@ -1,4 +1,4 @@
-desc "Fetch product prices"
+desc "Holt Mensaplan von der Seezeitseite"
 task :xml_parse do
   require 'nokogiri'
   require 'open-uri'
@@ -17,6 +17,10 @@ days = xml.search('tag').map do |tag|
     o[n] = tag.at(n).text
   end
 end
+
+
+days.each {|item| item["title"].gsub!("&quot;",""")}
+
 
 require 'awesome_print'
 
