@@ -13,32 +13,25 @@
 
   <tbody>
     <% @offer_blackboards.each do |offer_blackboard| %>
-      <tr data-link="<% offer_blackboard%>">
-        <td>Foto</td>
-        <td rowspan="2"><%= link_to offer_blackboard.title, offer_blackboard %>
+      <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>">
+        <td>
+          <%= image_tag("wohnung.jpg", class:"img-responsive img-rounded", size: "140") %>
+
+        </td>
+        <td><%= link_to offer_blackboard.title, offer_blackboard %>
         <br>
           <%= offer_blackboard.description %>
         </td>
-        <td><%= offer_blackboard.totalPrice %></td>
-        <td><%= offer_blackboard.condition %></td>
-        <td><%= offer_blackboard.created_at %></td>
+        <td><%= number_to_currency(offer_blackboard.totalPrice, locale: :de) %></td>
+        <td><% if offer_blackboard.condition == false
+               %>   gebraucht
+           <% else
+           %>Neu
+        <%end
+        %></td>
+        <td><%= offer_blackboard.created_at.strftime("%d %B %y")%></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Offer blackboard', new_offer_blackboard_path %>
-
-
-
-  <% if user_signed_in? %>
-      <li>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </li>
-  <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path)  %>
-      </li>
-  <% end %>
