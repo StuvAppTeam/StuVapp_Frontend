@@ -13,9 +13,12 @@
 
   <tbody>
     <% @offer_blackboards.each do |offer_blackboard| %>
-      <tr>
-        <td><%= link_to offer_blackboard.title, offer_blackboard %></td>
-        <td><%= offer_blackboard.description %></td>
+      <tr data-link="<% offer_blackboard%>">
+        <td>Foto</td>
+        <td rowspan="2"><%= link_to offer_blackboard.title, offer_blackboard %>
+        <br>
+          <%= offer_blackboard.description %>
+        </td>
         <td><%= offer_blackboard.totalPrice %></td>
         <td><%= offer_blackboard.condition %></td>
         <td><%= offer_blackboard.created_at %></td>
