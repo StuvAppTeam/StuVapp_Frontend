@@ -40,6 +40,4 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  #COnfig welche Sprachenen es Laden soll für die Übersetzung
-  config.i18n.available_locales = ['de', :de]
 end
