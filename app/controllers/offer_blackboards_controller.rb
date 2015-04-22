@@ -1,10 +1,15 @@
 class OfferBlackboardsController < ApplicationController
   before_action :set_offer_blackboard, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /offer_blackboards
   # GET /offer_blackboards.json
   def index
     @offer_blackboards = OfferBlackboard.all
+
+    
+    @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category])
   end
 
   # GET /offer_blackboards/1
