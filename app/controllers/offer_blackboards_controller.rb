@@ -6,10 +6,13 @@ class OfferBlackboardsController < ApplicationController
   # GET /offer_blackboards
   # GET /offer_blackboards.json
   def index
-    @offer_blackboards = OfferBlackboard.all
 
-    
-    @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category])
+    if params[:search]
+      @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category])
+    else
+      @offer_blackboards = OfferBlackboard.all
+    end
+      
   end
 
   # GET /offer_blackboards/1
