@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#Awsome Print to visualize Data
+gem 'awesome_print', :require => 'ap'
+
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
 #Login mit Devise
