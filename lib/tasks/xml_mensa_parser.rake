@@ -19,13 +19,13 @@ days = xml.search('tag').map do |tag|
 end
 
 
-days.each {|item| item["title"].gsub!("&quot;",""")}
+days.each {|item| item["title"].gsub!("&quot;","")}
 
 
 require 'awesome_print'
 
 
-File.open("public/mensa.json","w") do |f|
+File.open("app/views/mensas/mensa.json","w") do |f|
   f.write(days.to_json)
 end
 end
