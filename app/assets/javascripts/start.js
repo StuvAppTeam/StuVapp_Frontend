@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+ 	$('.dropdown-toggle').dropdown(); 
 	
 	$('#search_form_blackboard').hide();
 
