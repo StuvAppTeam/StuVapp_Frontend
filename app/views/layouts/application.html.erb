@@ -8,15 +8,14 @@
 		<%= csrf_meta_tags %>
 	</head>
 	<body>
-		<div class="cover-image">
 		<%= render 'start/navigation' %>
 
 		<div class="container body-container">
 
 			<%= yield %>
 		</div>
-		
+		<footer>
 		<%= render 'start/footer' %>
-		</div>
+		</footer>
 	</body>
 </html>

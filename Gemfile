@@ -25,7 +25,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 #Puma Webserver
 gem 'puma'
-
+#Gem für die Übersetzung
+gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
