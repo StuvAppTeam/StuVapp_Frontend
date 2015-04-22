@@ -59,6 +59,9 @@ body {
   margin:0 auto;
   width: 60%;
   border-radius:30px 30px 30px 30px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
 }
 
 .search-box.login{
@@ -141,3 +144,4 @@ hr{
     text-decoration: underline;
     color: #FFFFFF;
 }
+
