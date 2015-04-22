@@ -19,7 +19,7 @@ days = xml.search('tag').map do |tag|
 end
 
 
-days.each {|item| item["title"].gsub!("&quot;",""")}
+days.each {|item| item["title"].gsub!("&quot;","")}
 
 
 require 'awesome_print'
