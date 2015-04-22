@@ -1,6 +1,18 @@
 class OfferBlackboardsController < ApplicationController
+  #Filtert ob Benutzer angemeldet ist, außer show und index, diese wird immer angezeigt
+  before_filter :authenticate_user!, :except => [:show, :index]
+  #Nur eigene Eintraege duerfen Editiert und gelöscht werden
+  before_action :authorize, :only => [:edit, :destroy]
   before_action :set_offer_blackboard, only: [:show, :edit, :update, :destroy]
 
+  def authorize
+    @offer_blackboard = OfferBlackboard.find(params[:id])
+    unless @offer_blackboard.user_id == current_user.id
+      flash[:notice] = "Sie sind nicht Berechtigt diesen Eintrag zu ändern!!"
+      #redirect_to root_path # or anything you prefer
+      return false # Important to let rails know that the controller should not be executed
+    end
+  end
 
 
   # GET /offer_blackboards

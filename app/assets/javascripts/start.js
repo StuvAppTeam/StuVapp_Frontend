@@ -1,7 +1,5 @@
 $( document ).ready(function() {
-	$("tr[data-link]").click(function() {
-	    window.location = this.data("link")
-	});
+
 	
 	$('#search_form_blackboard').hide();
 
@@ -22,5 +20,13 @@ $( document ).ready(function() {
 	  }
 	});
 
+    // Ganze Zeile als Link
+    $("tr[data-link]").click(function(){
+        window.location = this.dataset.link;
+    });
+
 });
+
+
+
 
