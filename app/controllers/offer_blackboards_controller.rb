@@ -25,7 +25,7 @@ class OfferBlackboardsController < ApplicationController
     else
       @offer_blackboards = OfferBlackboard.all
     end
-      
+
   end
 
   # GET /offer_blackboards/1
