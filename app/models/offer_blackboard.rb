@@ -3,7 +3,7 @@ class OfferBlackboard < ActiveRecord::Base
     key = search #.map(&:inspect).join(', ')
     key = "%" + key + "%"
     key.gsub!(/"/, "")
- 
+
     if condition == "Neu"
       cond = true
     elsif condition == "Gebraucht"
@@ -13,13 +13,13 @@ class OfferBlackboard < ActiveRecord::Base
 
 
     if (category == 'Alles' && condition == "Alles")
-      where("title LIKE ?" ,  key  )
+      where("title ILIKE ?" ,  key  )
     elsif (category == 'Alles' && condition != "Alles")
-      where("title LIKE ? AND condition = ?",  key, cond)
+      where("title ILIKE ? AND condition = ?",  key, cond)
     elsif  condition == "Alles"
-      where("title LIKE ? AND category = ? ", key, category)
+      where("title ILIKE ? AND category = ? ", key, category)
     elsif condition != "Alles"
-      where("title LIKE ? AND category = ? AND condition = ? ", key, category, cond)
+      where("title ILIKE ? AND category = ? AND condition = ? ", key, category, cond)
     end
    end
 end
