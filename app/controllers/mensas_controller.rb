@@ -1,10 +1,5 @@
 class MensasController < ApplicationController
-<<<<<<< HEAD
-  def index 
-    file = File.open("app/views/mensas/mensa.json")
-  end
-end
-=======
+
   before_action :set_mensa, only: [:show, :edit, :update, :destroy]
 
   # GET /mensas
@@ -78,4 +73,4 @@ end
       params.require(:mensa).permit(:timestamp, :category, :title, :price)
     end
 end
->>>>>>> Mensa_Plan
+
