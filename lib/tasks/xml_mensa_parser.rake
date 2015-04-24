@@ -41,6 +41,7 @@ task :xml_parse => :environment do
   #  end
   #  
   #end
+Mensa.delete_all
 
 days = xml.search('tag').map do |tag|
   %w[ @timestamp category title preis1 ].each_with_object({}) do |n, o|
@@ -52,11 +53,12 @@ end
 days.each {|item| item["title"].gsub!("&quot;","")}
 
 days.each do |day|
+  
       @mensa = Mensa.new(
-        :timestamp            => day.values_at('@timestamp'),
-        :category       => day.values_at('category'),
-        :title       => day.values_at('title'),
-        :price       => day.values_at('preis1'),
+        :timestamp            =>  day.values_at('@timestamp').to_s.gsub!("[","").gsub!("]",""),
+        :category       => day.values_at('category').to_s.gsub!("[","").gsub!("]",""),
+        :title       => day.values_at('title').to_s.gsub!("[","").gsub!("]",""),
+        :price       => day.values_at('preis1').to_s.gsub!("[","").gsub!("]",""),
         )  
 
  @mensa.save
