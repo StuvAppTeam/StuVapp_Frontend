@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mensas
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "passwords" }
   resources :offer_blackboards
   resources :mensas

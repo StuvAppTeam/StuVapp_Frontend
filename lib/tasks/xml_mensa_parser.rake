@@ -1,5 +1,35 @@
 desc "Holt Mensaplan von der Seezeitseite"
-task :xml_parse do
+#
+#   task :xml_parse do
+#
+#require 'nokogiri'
+#require 'open-uri'
+#
+#doc = Nokogiri::XML(open("http://www.max-manager.de/daten-extern/seezeit/xml/mensa_friedrichshafen/speiseplan.xml"))
+#
+#  menus = doc.xpath('//tag')
+#
+#  menus.each do |menu|
+#      @data = Mensa.new(
+#        :timestamp            => menu.at('@timestamp').text,
+#        :category       => menu.at('category').text,
+#        :title       => menu.at('title').text,
+#        :price       => menu.at('preis1').text,
+#        )  
+#
+#
+#    @data.save
+#
+#    if @data.save
+#        puts "Success"
+#    else
+#        puts "Didn't work"
+#    end
+#    end
+#    puts @data
+#end
+
+task :xml_parse => :environment do
   require 'nokogiri'
   require 'open-uri'
 
@@ -21,12 +51,30 @@ end
 
 days.each {|item| item["title"].gsub!("&quot;","")}
 
+days.each do |day|
+      @mensa = Mensa.new(
+        :timestamp            => day.values_at('@timestamp'),
+        :category       => day.values_at('category'),
+        :title       => day.values_at('title'),
+        :price       => day.values_at('preis1'),
+        )  
 
-require 'awesome_print'
+ @mensa.save
+
+    if @mensa.save
+        puts "Success"
+    else
+        puts "Didn't work"
+    end
+   
+#require 'awesome_print'
 
 
-File.open("app/views/mensas/mensa.json","w") do |f|
-  f.write(days.to_json)
+
+#File.open("app/views/mensas/mensa.json","w") do |f|
+#  f.write(days.to_json)
+
 end
 end
+
 
