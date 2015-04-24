@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 
+  category: 
+  title: 
+  price: 
+
+two:
+  timestamp: 
+  category: 
+  title: 
+  price: 
