@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @mensa.timestamp %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @mensa.category %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mensa.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @mensa.price %>
+</p>
+
+<%= link_to 'Edit', edit_mensa_path(@mensa) %> |
+<%= link_to 'Back', mensas_path %>

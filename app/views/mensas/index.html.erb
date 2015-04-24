@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mensas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mensas.each do |mensa| %>
+      <tr>
+        <td><%= mensa.timestamp %></td>
+        <td><%= mensa.category %></td>
+        <td><%= mensa.title %></td>
+        <td><%= mensa.price %></td>
+        <td><%= link_to 'Show', mensa %></td>
+        <td><%= link_to 'Edit', edit_mensa_path(mensa) %></td>
+        <td><%= link_to 'Destroy', mensa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mensa', new_mensa_path %>
