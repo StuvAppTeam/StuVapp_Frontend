@@ -6,7 +6,7 @@
 				<%= label_tag(:condition, "Zustand:  ", class: "label-form") %>
 				<%= select_tag(:condition, options_for_select(['Alles', 'Gebraucht','Neu'])) %>
 			</div>
-	
+
 			<div class="col-sm-6">
 				<%= label_tag(:category, "Kategorie:  ", class: "label-form") %>
 				<%= select_tag(:category, options_for_select(['Alles', 'Elektronik'])) %>
@@ -14,6 +14,6 @@
 		</div>
 		<hr>
 	</div>
-	
-	<%= submit_tag "Suchen", :name => nil, :class => "btn btn-outlined btn-theme btn-lg"%>
+
+	<%= submit_tag "Suchen", :name => nil, :class => "btn search"%>
 <% end %>

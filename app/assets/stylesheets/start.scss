@@ -7,24 +7,8 @@
   color: #FFFFFF !important;
 }
 
-
-.fieldset {
-  border: none;
-  text-align: center;
-  background: transparent;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -180px;
-  margin-left: -227.5px;
-  padding: 0;
-  width: 455px;
-}
-
-
 .dropdown-menu {
   background-color: rgba(0,0,0,0.7) !important;
-  margin-top: 5px !important;
 }
 .dropdown-toggle:hover {
   background-color: #E2001A !important;
@@ -58,7 +42,7 @@ body {
   background-color: #060;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  //text-shadow: 0 1px 3px rgba(0,0,0,.5);
 
   -webkit-font-smoothing: antialiased;
 }
@@ -78,19 +62,17 @@ body {
 }
 
 .search-box{
-  background-color:rgba(255,255,255,0.9);
+  background-color:rgba(255,255,255,0.6);
   margin:0 auto;
   width: 60%;
   border-radius:30px 30px 30px 30px;
-  position: absolute;
-  top: 25%;
-  left: 25%;
+  position: relative;
+  top: 5%;
 }
 
 .search-box.login{
-  background-color:rgba(255,255,255,0.8);
   margin:0 auto;
-  width: 20%;
+  width: 50%;
 }
 
 
@@ -101,6 +83,8 @@ body {
 .search-bar{
   width: 90%;
   font-size: 16pt;
+  border: 1px solid #E2001A;
+  border-radius:5px 5px 5px 5px;
 }
 
 .btn-outlined {
@@ -118,10 +102,20 @@ body {
 }
 
 .btn-outlined.btn-theme:hover,
-.btn-outlined.btn-theme:active {
+.btn-outlined.btn-theme.active {
     color: #FFF;
-    background: #E2001A;
+    background: #E2001A !important;
     border-color: #E2001A;
+}
+
+.btn.search{
+  background: rgb(226,0,26);
+  color: #FFF;
+  width: 30%;
+  font-size: 16pt;
+}
+.btn.search:hover{
+  color: #FFF !important;
 }
 
 .label-form{
@@ -136,6 +130,7 @@ input[type="radio"]{
 select{
   font-size: 14pt !important;
   border: 1px solid rgb(226,0,26);
+  background-color: #FFF;
 }
 
 hr{
@@ -150,7 +145,7 @@ hr{
     font-size: 12pt;
     font-weight: normal;
     font-style: normal;
-    line-height: 1;
+
 }
 
 .navbar a:visited {
