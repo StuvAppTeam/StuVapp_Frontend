@@ -1,10 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Offer Blackboards</h1>
-<table>
+<% # Formular fuer die Suche ---> %>
+<%= form_tag offer_blackboards_path, :method => "get", id: "filter_form_blackboard" do %>
+    <div class="col-sm-12">
+      <div class="row">
+
+        <div class ="col-sm-3" style="border-right: 1px solid black">
+          <%= text_field_tag :search, params[:search], placeholder: "Suche", class: "search-bar" %>
+        </div>
+
+
+        <div class="col-sm-3" style="border-right: 1px solid black">
+          <%= label_tag(:condition, "Zustand:  ", class: "label-form") %>
+          <%= select_tag(:condition, options_for_select(['Alles', 'Gebraucht','Neu'])) %>
+        </div>
+
+        <div class="col-sm-3">
+          <%= label_tag(:category, "Kategorie:  ", class: "label-form") %>
+          <%= select_tag(:category, options_for_select(['Alles', 'Elektronik'])) %>
+        </div>
+
+        <div class="col-sm-3">
+          <%= submit_tag "Suche", :name => nil, :class => "btn search"%>
+        </div>
+      </div>
+<% end %>
+<hr>
+    </div>
+
+
 <table class="table table-hover">
   <thead>
-    <tr>
+    <tr class="active">
       <th>Foto</th>
       <th>Beschreibung</th>
       <th>Preis</th>
@@ -15,7 +42,7 @@
 
   <tbody>
     <% @offer_blackboards.each do |offer_blackboard| %>
-      <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>">
+      <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>" class="info">
         <td>
           <%= image_tag("wohnung.jpg", class:"img-responsive img-rounded", size: "140") %>
 
