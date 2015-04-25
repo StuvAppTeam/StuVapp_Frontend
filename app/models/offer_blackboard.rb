@@ -1,4 +1,6 @@
 class OfferBlackboard < ActiveRecord::Base
+  #Beziehung zu User, ein Datensatz gehört immer zu einem User
+  belongs_to :user
   def self.search(search, condition, category)
     key = search #.map(&:inspect).join(', ')
     key = "%" + key + "%"

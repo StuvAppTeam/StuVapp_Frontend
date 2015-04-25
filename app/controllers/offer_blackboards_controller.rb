@@ -46,6 +46,7 @@ class OfferBlackboardsController < ApplicationController
   # POST /offer_blackboards.json
   def create
     @offer_blackboard = OfferBlackboard.new(offer_blackboard_params)
+    @offer_blackboard.user_id = current_user.id
 
     respond_to do |format|
       if @offer_blackboard.save

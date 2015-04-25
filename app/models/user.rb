@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  #Beziehung zu Offer_Blackboards, ein User kann mehrere Angebote haben
+  has_many :offer_blackboards
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
