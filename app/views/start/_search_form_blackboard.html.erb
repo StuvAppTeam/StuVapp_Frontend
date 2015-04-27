@@ -9,7 +9,7 @@
 
 			<div class="col-sm-6">
 				<%= label_tag(:category, "Kategorie:  ", class: "label-form") %>
-				<%= select_tag(:category, options_for_select(['Alles', 'Elektronik'])) %>
+				<%= select_tag(:category, options_from_collection_for_select(Category.all, 'id', 'name'),include_blank: "Alles") %>
 			</div>
 		</div>
 		<hr>
