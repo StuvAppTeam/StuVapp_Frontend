@@ -1,3 +1,5 @@
+<div class="search-box">
+
 <%= form_for(@offer_blackboard) do |f| %>
   <% if @offer_blackboard.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +14,7 @@
   <% end %>
 
     <% #Formularsteps fuer anlegen eines neuen Angebotes %>
-    <div class="container">
+
       <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
           <div class="stepwizard-step">
@@ -29,24 +31,19 @@
           </div>
         </div>
       </div>
-      <form role="form">
         <div class="row setup-content" id="step-1">
           <div class="col-xs-12">
             <div class="col-md-12">
               <h3>Schrit 1</h3>
               <div class="form-group">
-                <%= f.label :title %><br>
-                <%= f.text_field :title %>
+                <%= f.label :title, class: "control-label" %><br>
+                <%= f.text_field :title, class: "form-control",required: "required" %>
               </div>
               <div class="form-group">
-                <label for="offer_blackboard_description">Beschreibung</label><br>
-                  <%= f.text_field :description %>
+                  <%= f.label :description, "Beschreibung", class: "control-label" %>
+                  <%= f.text_area :description, rows: 5, class: "form-control"%>
               </div>
-              <div class="form-group">
-                <label for="offer_blackboard_totalPrice">Preis</label><br>
-                <%= f.text_field :totalPrice %>
-              </div>
-              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Weiter</button>
+              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
             </div>
           </div>
         </div>
@@ -55,19 +52,18 @@
             <div class="col-md-12">
               <h3> Schritt 2</h3>
               <div class="form-group">
-                <label for="offer_blackboard_category_id">Kategorie</label><br>
-
+                <%= f.label :totalPrice, "Preis", class: "control-label" %>
+                <%= f.text_field :totalPrice ,style: "width: 10%; margin-right: 5%;", required: "required" %>
+                <%= f.label :category_id, "Kategorie", class: "control-label" %>
                 <%= f.select(:category_id, Category.all.collect {|p| [ p.name, p.id ] }) %>
-              </div>
-              <div class="form-group">
-                <label for="offer_blackboard_condition">Zustand</label><br>
+                <%= f.label :condition, "Zustand", class: "control-label", style: "margin-left: 5%;" %>
                 <%= f.check_box :condition %> Neu?
               </div>
               <div class="form-group">
-                <label for="offer_blackboard_image_id">Bild</label><br>
-              <%= f.number_field :image_id %>
+                <%= f.label :image_id, "Bilder Hochladen:" %><br>
+                <%= f.number_field :image_id %>
               </div>
-              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Weiter</button>
+              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
             </div>
           </div>
         </div>
@@ -76,21 +72,19 @@
             <div class="col-md-12">
               <h3>Schritt 3</h3>
               <div class="form-group">
-                <label for="offer_blackboard_street">Straße</label><br>
-                <%= f.text_field :street %>
-                </div>
-              <div class="form-group">
-                <label for="offer_blackboard_city">Stadt</label><br>
-                <%= f.text_field :city %>
+                <%= f.label :street, "Straße", class: "control-label"%>
+                <%= f.text_field :street, class: "form-control" %>
+
+                <%= f.label :city, "Stadt", class: "control-label"%>
+                <%= f.text_field :city, class: "form-control" %>
+
+                <%= f.label :zipcode, "PLZ", class: "control-label"%>
+                <%= f.number_field :zipcode, class: "form-control" %>
               </div>
-              <div class="form-group">
-                <label for="offer_blackboard_zipcode">Postleitzahl</label><br>
-                <%= f.number_field :zipcode %>
-              </div>
-              <button class="btn btn-success btn-lg pull-right" type="submit">Jetzt verkaufen</button>
+              <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>
             </div>
           </div>
         </div>
-      </form>
-    </div>
+
 <% end %>
+</div>
