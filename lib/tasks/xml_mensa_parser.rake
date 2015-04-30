@@ -9,16 +9,20 @@ task :xml_parse => :environment do
 
 Mensa.delete_all
 
+ xml.css('item').each do |i|
+   children = i.children
+   parent = i.parent
+   timestamp = i.parent['timestamp']
+   category = children.css('category').inner_text
+   title = children.css('title').inner_text
+   price = children.css('preis1').inner_text
 
-xml.css('tag').each do |node|
-  children = node.children
-  childchild = children.children
   
   @mensa = Mensa.new(
-  :timestamp => node['timestamp'],
-  :category => childchild.css('category').inner_text,
-  :title => childchild.css('title').inner_text,
-  :price => childchild.css('preis1').inner_text
+  :timestamp => timestamp,
+  :category => category,
+  :title => title,
+  :price => price
   )
  @mensa.save 
   if @mensa.save
@@ -27,7 +31,6 @@ xml.css('tag').each do |node|
         puts "Didn't work"
     end
 end
-
 end
 
 
