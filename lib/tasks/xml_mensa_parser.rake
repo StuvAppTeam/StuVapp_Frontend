@@ -12,7 +12,7 @@ Mensa.delete_all
  xml.css('item').each do |i|
    children = i.children
    parent = i.parent
-   timestamp = i.parent['timestamp']
+   timestamp = i.parent['timestamp'] + "000"
    category = children.css('category').inner_text
    title = children.css('title').inner_text
    price = children.css('preis1').inner_text
