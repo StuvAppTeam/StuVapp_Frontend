@@ -14,13 +14,14 @@ task :fb_newsfeed => :environment do
   #Laden des Facebook Feeds der DHBW
   feed = @graph.get_connections("DHBWRAVENSBURG", "feed",{date_format: :U})
   DhbwNews.delete_all
+
   feed.each do |feeds|
 
     @dhbw_news = DhbwNews.new(
-        :feedId         => feeds.values_at('id').to_s,
-        :message        => feeds.values_at('message').to_s,
-        :picture        => feeds.values_at('picture').to_s,
-        :link           => feeds.values_at('link').to_s,
+        :feedId         => feeds.values_at('id')[0],
+        :message        => feeds.values_at('message')[0],
+        :picture        => feeds.values_at('picture')[0],
+        :link           => feeds.values_at('link')[0],
         :feedDate       => Time.at(feeds.values_at('created_time')[0]).to_datetime
     )
 
@@ -31,7 +32,6 @@ task :fb_newsfeed => :environment do
 
   #Laden des Facebook Feeds der StuV
   feed = @graph.get_connections("stuvrav", "feed",{date_format: :U})
-  DhbwNews.delete_all
   feed.each do |feeds|
 
     @dhbw_news = DhbwNews.new(
