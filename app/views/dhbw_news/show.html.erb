@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feedid:</strong>
+  <%= @dhbw_news.feedId %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @dhbw_news.message %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @dhbw_news.picture %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @dhbw_news.link %>
+</p>
+
+<p>
+  <strong>Feeddate:</strong>
+  <%= @dhbw_news.feedDate %>
+</p>
+
+<%= link_to 'Edit', edit_dhbw_news_path(@dhbw_news) %> |
+<%= link_to 'Back', dhbw_news_index_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dhbw News</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feedid</th>
+      <th>Message</th>
+      <th>Picture</th>
+      <th>Link</th>
+      <th>Feeddate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dhbw_news.each do |dhbw_news| %>
+      <tr>
+        <td><%= dhbw_news.feedId %></td>
+        <td><%= dhbw_news.message %></td>
+        <td><%= dhbw_news.picture %></td>
+        <td><%= dhbw_news.link %></td>
+        <td><%= dhbw_news.feedDate %></td>
+        <td><%= link_to 'Show', dhbw_news %></td>
+        <td><%= link_to 'Edit', edit_dhbw_news_path(dhbw_news) %></td>
+        <td><%= link_to 'Destroy', dhbw_news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dhbw news', new_dhbw_news_path %>
