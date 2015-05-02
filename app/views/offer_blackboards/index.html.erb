@@ -44,9 +44,11 @@
     <% @offer_blackboards.each do |offer_blackboard| %>
       <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>" class="info">
         <td>
-          <%= image_tag(offer_blackboard.image.photo.url, class:"img-responsive img-rounded") %>
+
+        <%= image_tag(offer_blackboard.images.first.photo.url(:thumb))%>
 
         </td>
+
         <td><%= link_to offer_blackboard.title, offer_blackboard %>
         <br>
           <%= offer_blackboard.description %>

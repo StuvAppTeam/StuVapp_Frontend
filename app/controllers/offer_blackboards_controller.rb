@@ -42,7 +42,6 @@ class OfferBlackboardsController < ApplicationController
 
   # GET /offer_blackboards/1/edit
   def edit
-    3.times {@offer_blackboard.images.build}
   end
 
   # POST /offer_blackboards
