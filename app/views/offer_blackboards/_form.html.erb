@@ -1,6 +1,6 @@
 <div class="search-box">
 
-<%= form_for(@offer_blackboard) do |f| %>
+<%= form_for @offer_blackboard, :html => {:multipart => true} do |f| %>
   <% if @offer_blackboard.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@offer_blackboard.errors.count, "error") %> prohibited this offer_blackboard from being saved:</h2>
@@ -59,10 +59,14 @@
                 <%= f.label :condition, "Zustand", class: "control-label", style: "margin-left: 5%;" %>
                 <%= f.check_box :condition %> Neu?
               </div>
-              <div class="form-group">
-                <%= f.label :image_id, "Bilder Hochladen:" %><br>
-                <%= f.number_field :image_id %>
+              <% #Nested Form für Image einbindung %>
+                <%= f.fields_for :images do |image| %>
+                  <div class="form-group">
+                    <%= image.label :title, "Titel", class:"control-label" %>
+                    <%= image.text_field :titel, style: "width: 10%; margin-right: 5%;", required: "required" %>
+                    <%= image.file_field :photo %>
               </div>
+              <% end %>
               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
             </div>
           </div>

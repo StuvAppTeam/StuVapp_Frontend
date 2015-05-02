@@ -25,6 +25,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 #Puma Webserver
 gem 'puma'
+#Gems for Image Upload an resize
+gem 'carrierwave'
+gem 'rmagick'
 #Gem für die Übersetzung
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 # Use jquery as the JavaScript library

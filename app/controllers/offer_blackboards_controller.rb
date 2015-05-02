@@ -36,10 +36,13 @@ class OfferBlackboardsController < ApplicationController
   # GET /offer_blackboards/new
   def new
     @offer_blackboard = OfferBlackboard.new
+    #Bei Create können so 3 Images erstellt werden
+    3.times {@offer_blackboard.images.build}
   end
 
   # GET /offer_blackboards/1/edit
   def edit
+    3.times {@offer_blackboard.images.build}
   end
 
   # POST /offer_blackboards
@@ -91,6 +94,6 @@ class OfferBlackboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_blackboard_params
-      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition)
+      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:title, :photo])
     end
 end

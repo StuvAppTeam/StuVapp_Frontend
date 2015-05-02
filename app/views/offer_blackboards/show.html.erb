@@ -17,7 +17,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @offer_blackboard.image_id %>
+  <% @offer_blackboard.images.each do |image| %>
+      <%= image_tag(image.photo.url) %>
+  <% end %>
 </p>
 
 <p>
