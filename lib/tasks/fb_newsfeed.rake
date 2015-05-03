@@ -15,6 +15,19 @@ task :fb_newsfeed => :environment do
   DhbwNews.delete_all
 
   feed.each do |feeds|
+    #Abrufen der Metadaten zum Prüfen, ob ein Event vorliegt
+    event = @graph.get_object(feeds.values_at('object_id')[0],{metadata: 1, fields: "metadata"}).values_at("metadata")
+
+
+    #Prüfung, ob Event oder nicht
+    if event[0].values_at("type")[0] == "event"
+      #Wenn Event vorliegt, abrufen des Cover Bilds
+      cover =  @graph.get_object(feeds.values_at('object_id')[0],{fields: "cover"}).values_at("cover")
+      picture = cover[0].values_at("source")[0]
+    else
+      picture = @graph.get_picture(feeds.values_at('object_id')[0])
+    end
+
 
     if feeds.has_key?("object_id")
     #Abrufen der Metadaten zum Prüfen, ob ein Event vorliegt
