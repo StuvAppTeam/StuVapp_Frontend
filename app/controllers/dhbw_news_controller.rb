@@ -1,3 +1,6 @@
+# Controller für das dhbw_news Model
+# Benötigt für den Abruf der Daten aus der App heraus (REST-API)
+# Keine zusätzlichen Methoden eingefügt
 class DhbwNewsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   before_action :set_dhbw_news, only: [:show, :edit, :update, :destroy]

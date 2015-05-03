@@ -5,8 +5,8 @@ class OfferBlackboardsController < ApplicationController
   before_action :authorize, :only => [:edit, :destroy]
   before_action :set_offer_blackboard, only: [:show, :edit, :update, :destroy]
 
-  #Funktion zum überprüfen ob der aktuelle User auch Author entspricht, wenn nicht
-  #Message und weiterleiten zum aktuellen Punkt
+  # Funktion zum überprüfen ob der aktuelle User auch Author entspricht, wenn nicht
+  # Message und weiterleiten zum aktuellen Punkt
   def authorize
     @offer_blackboard = OfferBlackboard.find(params[:id])
     unless @offer_blackboard.user_id == current_user.id
@@ -20,6 +20,7 @@ class OfferBlackboardsController < ApplicationController
   # GET /offer_blackboards
   # GET /offer_blackboards.json
   def index
+    # Anpassung der Index Methode. Falls Suche vorliegt, Methode aus dem Model aufrufen
     if params[:search]
       @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category])
     else
