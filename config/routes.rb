@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :campus
   resources :dhbw_news
   resources :categories
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "passwords" }

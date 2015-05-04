@@ -3,8 +3,18 @@
 # Keine zusätzlichen Methoden eingefügt
 class DhbwNewsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
-  before_action :set_dhbw_news, only: [:show, :edit, :update, :destroy]
+  before_action :admin, :except => [:index]
 
+
+  def admin
+    unless current_user.admin?
+      sign_out current_user
+
+      redirect_to root_path
+
+      return false
+    end
+  end
   # GET /dhbw_news
   # GET /dhbw_news.json
   def index

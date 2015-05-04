@@ -1,7 +1,18 @@
 class MensasController < ApplicationController
 
   before_action :set_mensa, only: [:show, :edit, :update, :destroy]
+  before_action :admin, :except => [:index]
 
+
+  def admin
+    unless current_user.admin?
+      sign_out current_user
+
+      redirect_to root_path
+
+      return false
+    end
+  end
   # GET /mensas
   # GET /mensas.json
   def index
@@ -73,4 +84,3 @@ class MensasController < ApplicationController
       params.require(:mensa).permit(:timestamp, :category, :title, :price)
     end
 end
-
