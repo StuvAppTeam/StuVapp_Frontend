@@ -16,7 +16,6 @@ class OfferBlackboardsController < ApplicationController
     end
   end
 
-
   # GET /offer_blackboards
   # GET /offer_blackboards.json
   def index
@@ -94,6 +93,6 @@ class OfferBlackboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_blackboard_params
-      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:id, :title, :photo])
+      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:id, :title, :photo, :_destroy])
     end
 end

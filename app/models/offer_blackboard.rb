@@ -6,7 +6,7 @@ class OfferBlackboard < ActiveRecord::Base
   #Beziehung zu Images
   has_many :images, :dependent => :destroy
   # Zugriff auf Formularattribute von Images + Löschen der Attribute erlauben
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, :allow_destroy => true
   def self.search(search, condition, category)
     key = search #.map(&:inspect).join(', ')
     key = "%" + key + "%"
