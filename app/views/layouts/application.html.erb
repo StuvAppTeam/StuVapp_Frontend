@@ -13,11 +13,15 @@
 	<body>
 		<%= render 'start/navigation' %>
 
-		<div class="container body-container">
+		<div id="wrap">
+
+				<div id="main">
+
 
 			<%= yield %>
+			</div>
 		</div>
-		
+
 		<%= render 'start/footer' %>
 
 	</body>
