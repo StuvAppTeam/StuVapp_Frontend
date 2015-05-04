@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150502105743) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string   "titel"
+    t.string   "title"
     t.integer  "offer_blackboard_id"
     t.integer  "campus_id"
     t.string   "photo"

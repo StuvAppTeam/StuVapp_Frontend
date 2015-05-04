@@ -1,7 +1,7 @@
 class CreateImages < ActiveRecord::Migration
   def change
     create_table :images do |t|
-      t.string :titel
+      t.string :title
       t.integer :offer_blackboard_id
       t.integer :campus_id
       t.string :photo

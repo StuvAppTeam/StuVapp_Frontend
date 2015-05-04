@@ -42,6 +42,7 @@ class OfferBlackboardsController < ApplicationController
 
   # GET /offer_blackboards/1/edit
   def edit
+    @offer_blackboard = OfferBlackboard.find(params[:id])
   end
 
   # POST /offer_blackboards
@@ -93,6 +94,6 @@ class OfferBlackboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_blackboard_params
-      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:title, :photo])
+      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:id, :title, :photo])
     end
 end
