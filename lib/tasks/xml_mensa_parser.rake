@@ -4,7 +4,7 @@ task :xml_parse => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-  xml = Nokogiri::XML(open("http://www.max-manager.de/daten-extern/seezeit/xml/mensa_friedrichshafen/speiseplan.xml"))
+  xml = Nokogiri::XML(open("http://www.max-manager.de/daten-extern/seezeit/xml/mensa_ravensburg/speiseplan.xml"))
 
 
 Mensa.delete_all
