@@ -1,6 +1,6 @@
 <div class="search-box">
 
-<%= form_for @offer_blackboard, :html => {:multipart => true} do |f| %>
+<%= form_for @offer_blackboard do |f| %>
   <% if @offer_blackboard.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@offer_blackboard.errors.count, "error") %> prohibited this offer_blackboard from being saved:</h2>
@@ -62,29 +62,13 @@
               <% #Nested Form für Image einbindung %>
               <div class="form-group">
 
-                <%= f.fields_for :images do |image| %>
-                    <div class="row">
-                      <div class="col-xs-2">
-                        <% if image.object.photo %>
-                            <%= image_tag image.object.photo.url(:thumb) %>
-                            <%# image.object.photo.file.filename %>
-                        <% end %>
-                      </div>
-                      <div class="col-xs-5">
-                        <%= image.file_field :photo %>
-                      </div>
-                      <div class="col-xs-5">
-                        <%= image.label :title, "Titel", class:"control-label" %>
-                        <%= image.text_field :title%>
-                        <br>
-                        <%= image.check_box :_destroy %> Löschen?
-                      </div>
-
-                    </div>
-                 <% end %>
+                <%= f.fields_for :images do |builder| %>
+                    <%= render 'image_fields', f: builder %>
+                  <% end %>
+                  <%= link_to_add_fields "Add Image", f, :images %>
 
               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
-            </div>
+              </div>
           </div>
         </div>
         <div class="row setup-content" id="step-3">
