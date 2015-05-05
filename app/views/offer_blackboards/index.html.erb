@@ -44,21 +44,26 @@
     <% @offer_blackboards.each do |offer_blackboard| %>
       <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>" class="info">
         <td>
-          <%= image_tag("wohnung.jpg", class:"img-responsive img-rounded", size: "140") %>
-
+            <% if offer_blackboard.images.any? %>
+                <%= image_tag(offer_blackboard.images.first.photo.url(:thumb))%>
+            <%end %>
         </td>
-        <td><%= link_to offer_blackboard.title, offer_blackboard %>
-        <br>
-          <%= offer_blackboard.description %>
+        <td>
+            <%= link_to offer_blackboard.title, offer_blackboard %>
+            <br>
+            <%= offer_blackboard.description %>
         </td>
-        <td><%= number_to_currency(offer_blackboard.totalPrice, locale: :de) %></td>
-        <td><% if offer_blackboard.condition == false
-               %>   gebraucht
-           <% else
-           %>Neu
-        <%end
-        %></td>
-        <td><%= offer_blackboard.created_at.strftime("%d %B %y")%></td>
+        <td>
+            <%= number_to_currency(offer_blackboard.totalPrice, locale: :de) %>
+        </td>
+        <td>
+            <% if offer_blackboard.condition == false%>gebraucht
+                <% else%>Neu
+            <%end%>
+        </td>
+        <td>
+            <%= offer_blackboard.created_at.strftime("%d %B %y")%>
+        </td>
       </tr>
 
     <% end %>

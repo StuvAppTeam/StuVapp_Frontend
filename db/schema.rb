@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20150504154142) do
     t.boolean  "stuv"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "offer_blackboard_id"
+    t.integer  "campus_id"
+    t.string   "photo"
+    t.integer  "offer_apartment_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "mensas", force: :cascade do |t|
     t.string   "timestamp"
     t.string   "category"

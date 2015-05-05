@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titel: 
+  offer_blackboard_id: 
+  campus_id: 
+  photo: 
+  offer_apartment_id: 
+
+two:
+  titel: 
+  offer_blackboard_id: 
+  campus_id: 
+  photo: 
+  offer_apartment_id: 

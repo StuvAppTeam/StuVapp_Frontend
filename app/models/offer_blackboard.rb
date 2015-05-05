@@ -4,6 +4,10 @@ class OfferBlackboard < ActiveRecord::Base
   # Beziehung zur Kategorie, ein Datensatz gehört immer zu einer Kategorie
   belongs_to :category
 
+  #Beziehung zu Images
+  has_many :images, :dependent => :destroy
+  # Zugriff auf Formularattribute von Images + Löschen der Attribute erlauben
+  accepts_nested_attributes_for :images, :allow_destroy => true
 
   # Suchfunktion für Angebote im schwarzen Brett
   def self.search(search, condition, category)
