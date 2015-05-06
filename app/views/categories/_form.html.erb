@@ -15,6 +15,16 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+    <div class="field">
+    <%= f.fields_for :image do |builder| %>
+          <%= builder.file_field :photo %> <br>
+          <%= builder.label :title, "Titel", class:"control-label" %> <br>
+          <%= builder.text_field :title%>
+
+          <% end %>
+
+
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

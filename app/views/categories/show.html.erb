@@ -4,6 +4,17 @@
   <strong>Name:</strong>
   <%= @category.name %>
 </p>
+<p>
+  <% unless @category.image.blank? %>
+      <%= image_tag(@category.image.photo.url(:thumb)) %>
+</p>
+<p>
+      <strong>ImageName:</strong>
+        <%= @category.image.title %>
+</p>
+  <%end%>
+
+
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

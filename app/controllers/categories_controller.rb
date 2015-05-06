@@ -26,6 +26,8 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
+    #Erstellt automatisch ein Image für die Kategorie
+    @category.build_image
   end
 
   # GET /categories/1/edit
@@ -80,6 +82,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, image_attributes: [:id, :title, :photo, :category_id, :_destroy,])
     end
 end

@@ -3,6 +3,8 @@ class Image < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   #Beziehung zu Offer_Blackboards
   belongs_to :offer_blackboard
+  #Beziehung zu Kategorien
+  belongs_to :category
 
 
   validate :title_without_photo
