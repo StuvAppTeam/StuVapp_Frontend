@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "passwords" }
   resources :offer_blackboards
   resources :mensas
+  resources :activities
 
 
   # The priority is based upon order of creation: first created -> highest priority.
