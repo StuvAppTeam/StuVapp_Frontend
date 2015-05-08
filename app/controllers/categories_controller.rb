@@ -2,16 +2,6 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :admin, :except => [:index]
 
-
-  def admin
-    unless current_user.admin?
-      sign_out current_user
-
-      redirect_to root_path
-
-      return false
-    end
-  end
   # GET /categories
   # GET /categories.json
   def index
