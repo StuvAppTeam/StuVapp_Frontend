@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'static_pages/apartment_choice'
+  get 'static_pages/blackboard_choice'
+  get 'static_pages/about'
+  get 'apartments/new_offer'
+  get 'apartments/new_request'
+  get 'offer_blackboards/new_offer'
+  get 'offer_blackboards/new_request'
+  get 'static_pages/manage_ad'
+  resources :apartments
   resources :campus
   resources :dhbw_news
   resources :categories
@@ -7,7 +16,6 @@ Rails.application.routes.draw do
   resources :offer_blackboards
   resources :mensas
   resources :activities
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

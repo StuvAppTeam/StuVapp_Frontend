@@ -1,0 +1,11 @@
+<h1>Eintrag ändern</h1>
+<div class="search-box">
+  <% if @apartment.request? %>
+    <%= render 'form_request' %>
+  <% else %>
+    <%= render 'form_offer' %>
+  <% end %>
+
+  <%= link_to 'Show', @apartment %> |
+  <%= link_to 'Back', apartments_path %>
+</div>

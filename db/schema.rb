@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508205733) do
+ActiveRecord::Schema.define(version: 20150509161522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,31 @@ ActiveRecord::Schema.define(version: 20150508205733) do
     t.string   "latitude"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "apartments", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.float    "totalPrize"
+    t.string   "street"
+    t.string   "city"
+    t.string   "zipcode"
+    t.integer  "user_id"
+    t.float    "size"
+    t.float    "rent"
+    t.float    "additionalCost"
+    t.string   "phase"
+    t.float    "deposit"
+    t.string   "type"
+    t.datetime "movein"
+    t.boolean  "furnished"
+    t.boolean  "internet"
+    t.string   "parking"
+    t.integer  "rooms"
+    t.boolean  "somking"
+    t.boolean  "request"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "campus", force: :cascade do |t|
@@ -70,7 +95,7 @@ ActiveRecord::Schema.define(version: 20150508205733) do
     t.integer  "offer_blackboard_id"
     t.integer  "campus_id"
     t.string   "photo"
-    t.integer  "offer_apartment_id"
+    t.integer  "apartment_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "category_id"
@@ -98,6 +123,7 @@ ActiveRecord::Schema.define(version: 20150508205733) do
     t.boolean  "condition"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "request"
   end
 
   create_table "users", force: :cascade do |t|

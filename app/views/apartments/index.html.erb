@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%= form_tag apartments_path, :method => "get" do %>
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-3" style="border-right: 1px solid black">
+	     <%= text_field_tag :search, params[:search], placeholder: "Ort", class: "search-bar" %>
+      </div>
+			<div class="col-sm-2" style="border-right: 1px solid black">
+        <%= label_tag(:phase, "Phase: ", class: "label-form") %>
+        <%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
+			</div>
+			<div class="col-sm-3" style="border-right: 1px solid black">
+        <%= label_tag(:type, "Wohnungstyp", class: "label-form") %>
+				<%= select_tag(:type, options_for_select(['Alles', 'WG','Wohnung'])) %>
+      </div>
+      <div class="col-sm-2">
+        <%= label_tag(:request, "Typ: ", class: "label-form") %>
+        <%= select_tag(:request, options_for_select(['Angebote', 'Gesuche'])) %>
+      </div>
+      <div class="col-sm-2">
+      <%= submit_tag "Suchen", :name => nil, :class => "btn searchbutton"%>
+      </div>
+		</div>
+		<hr>
+	</div>
+<% end %>
+
+
+<h1>Wohnungsanzeigen</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr class="active">
+      <th>Foto</th>
+      <th>Beschreibung</th>
+      <th>Preis</th>
+      <th>Nebenkosten</th>
+      <th>Datum</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr data-link="<%= apartment_path(apartment) %>" class="info">
+        <td>
+            <% if apartment.images.any? %>
+                <%= image_tag(apartment.images.first.photo.url(:thumb))%>
+            <%end %>
+        </td>
+        <td>
+            <%= link_to apartment.title, apartment %>
+            <br>
+            <%= apartment.description %>
+        </td>
+        <td>
+            <%= number_to_currency(apartment.totalPrize, locale: :de) %>
+        </td>
+        <td>
+          <%= number_to_currency(apartment.additionalCost, locale: :de) %>
+        </td>
+        <td>
+            <%= apartment.created_at.strftime("%d %B %y")%>
+        </td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>

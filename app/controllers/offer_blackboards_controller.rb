@@ -12,7 +12,7 @@ class OfferBlackboardsController < ApplicationController
   def index
     # Anpassung der Index Methode. Falls Suche vorliegt, Methode aus dem Model aufrufen
     if params[:search]
-      @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category])
+      @offer_blackboards = OfferBlackboard.search(params[:search], params[:condition], params[:category], params[:request])
     else
       @offer_blackboards = OfferBlackboard.all
     end
@@ -25,10 +25,14 @@ class OfferBlackboardsController < ApplicationController
   end
 
   # GET /offer_blackboards/new
-  def new
+  def new_offer
     @offer_blackboard = OfferBlackboard.new
     #Bei Create können so 3 Images erstellt werden
     #3.times {@offer_blackboard.images.build}
+  end
+
+  def new_request
+    @offer_blackboard = OfferBlackboard.new
   end
 
   # GET /offer_blackboards/1/edit

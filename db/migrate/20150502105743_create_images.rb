@@ -5,7 +5,7 @@ class CreateImages < ActiveRecord::Migration
       t.integer :offer_blackboard_id
       t.integer :campus_id
       t.string :photo
-      t.integer :offer_apartment_id
+      t.integer :apartment_id
 
       t.timestamps null: false
     end
