@@ -1,0 +1,97 @@
+
+
+<h4>Schwarzes Brett</h4>
+<table class="table table-hover">
+  <thead>
+    <tr class="active">
+      <th>Foto</th>
+      <th>Beschreibung</th>
+      <th>Preis</th>
+      <th>Zustand</th>
+      <th>Datum</th>
+      <th>Aktionen</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blackboard.each do |offer_blackboard| %>
+      <tr data-link="<%= offer_blackboard_path(offer_blackboard) %>" class="info">
+        <td>
+            <% if offer_blackboard.images.any? %>
+                <%= image_tag(offer_blackboard.images.first.photo.url(:thumb))%>
+            <%end %>
+        </td>
+        <td>
+            <%= link_to offer_blackboard.title, offer_blackboard %>
+            <br>
+            <%= offer_blackboard.description %>
+        </td>
+        <td>
+            <%= number_to_currency(offer_blackboard.totalPrice, locale: :de) %>
+        </td>
+        <td>
+            <% if offer_blackboard.condition == false%>gebraucht
+                <% else%>Neu
+            <%end%>
+        </td>
+        <td>
+            <%= offer_blackboard.created_at.strftime("%d %B %y")%>
+        </td>
+        <td>
+          <%= link_to 'Anzeigen', {:controller => "offer_blackboards", :action => 'show', :id => offer_blackboard.id} %> |
+          <%= link_to 'Ändern', {:controller => "offer_blackboards", :action => 'edit', :id => offer_blackboard.id} %> |
+          <%= link_to "Löschen", {:controller => "offer_blackboards", :action => 'destroy', :id => offer_blackboard.id}, :confirm => "Eintrag löschen?",:method => :delete %>
+        </td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+
+<h4>Wohnungsmarkt</h4>
+<table class="table table-hover">
+  <thead>
+    <tr class="active">
+      <th>Foto</th>
+      <th>Beschreibung</th>
+      <th>Preis</th>
+      <th>Nebenkosten</th>
+      <th>Datum</th>
+      <th>Aktionen</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartment.each do |apartment| %>
+      <tr data-link="<%= apartment_path(apartment) %>" class="info">
+        <td>
+            <% if apartment.images.any? %>
+                <%= image_tag(apartment.images.first.photo.url(:thumb))%>
+            <%end %>
+        </td>
+        <td>
+            <%= link_to apartment.title, apartment %>
+            <br>
+            <%= apartment.description %>
+        </td>
+        <td>
+            <%= number_to_currency(apartment.totalPrize, locale: :de) %>
+        </td>
+        <td>
+          <%= number_to_currency(apartment.additionalCost, locale: :de) %>
+        </td>
+        <td>
+            <%= apartment.created_at.strftime("%d %B %y")%>
+        </td>
+        <td>
+          <%= link_to 'Anzeigen', {:controller => "apartments", :action => 'show', :id => apartment.id} %> |
+          <%= link_to 'Ändern', {:controller => "apartments", :action => 'edit', :id => apartment.id} %> |
+          <%= link_to "Löschen", {:controller => "apartments", :action => 'destroy', :id => apartment.id}, :confirm => "Eintrag löschen?",:method => :delete %>
+        </td>
+      </tr>
+
+
+    <% end %>
+  </tbody>
+</table>

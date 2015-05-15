@@ -2,7 +2,7 @@
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Suche <span class="caret"></span></a>
 	<ul class="dropdown-menu" role="menu">
 		<li>
-			<a href="#">Wohnungsmarkt</a>
+			<%= link_to("Wohnungsmarkt", apartments_path) %>
 		</li>
 		<li>
 			<%= link_to("Schwarzes Brett", offer_blackboards_path) %>
@@ -14,16 +14,16 @@
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Biete <span class="caret"></span></a>
 	<ul class="dropdown-menu" role="menu">
 		<li>
-			<a href="#">Wohnungsmarkt</a>
+			<%= link_to("Wohnungsmarkt", "/static_pages/apartment_choice") %>
 		</li>
 		<li>
-			<%= link_to("Schwarzes Brett", new_offer_blackboard_path) %>
+			<%= link_to("Schwarzes Brett", "/static_pages/blackboard_choice") %>
 		</li>
 	</ul>
 </li>
 
 <li>
-	<a href="#">About</a>
+	<%= link_to("About", "/static_pages/about") %>
 </li>
 
 <% if user_signed_in? %>
@@ -34,7 +34,7 @@
 			<%= link_to('Einstellungen', edit_user_registration_path) %>
 		</li>
 		<li>
-			<a href="#">Anzeigen verwalten</a>
+			<%= link_to("Anzeigen verwalten", "/static_pages/manage_ad") %>
 		</li>
 		<li>
 			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>

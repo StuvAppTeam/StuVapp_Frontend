@@ -10,7 +10,7 @@ class OfferBlackboard < ActiveRecord::Base
   accepts_nested_attributes_for :images, :allow_destroy => true
 
   # Suchfunktion für Angebote im schwarzen Brett
-  def self.search(search, condition, category)
+  def self.search(search, condition, category, request)
     # Vorbereiten des eingegebenen String
     key = search #.map(&:inspect).join(', ')
     key = "%" + key + "%"
@@ -23,16 +23,22 @@ class OfferBlackboard < ActiveRecord::Base
       cond = false
     end
 
+    if request == 'Gesuche'
+      req = true
+    else
+      req = false
+    end
+
 
     # Fallunterscheidung für verschiedene Eingaben
     if (category == '' && condition == "Alles")
-      where("title ILIKE ?" ,  key  )
+      where("title ILIKE ? AND description ILIKE ? AND request = ?" ,  key, key, req)
     elsif (category == '' && condition != "Alles")
-      where("title ILIKE ? AND condition = ?",  key, cond)
+      where("title ILIKE ? AND description ILIKE ? AND condition = ? AND request = ?",  key, key, cond, req)
     elsif  condition == "Alles"
-      where("title ILIKE ? AND category_id = ? ", key, category)
+      where("title ILIKE ? AND description ILIKE ? AND category_id = ? AND request = ?", key, key, category, req)
     elsif condition != "Alles"
-      where("title ILIKE ? AND category_id = ? AND condition = ? ", key, category, cond)
+      where("title ILIKE ? AND description ILIKE ? AND category_id = ? AND condition = ? AND request = ?", key, key, category, cond, req)
     end
    end
 end

@@ -113,6 +113,12 @@ body {
   width: 30%;
   font-size: 16pt;
 }
+.btn.searchbutton{
+  background: rgb(226,0,26);
+  color: #FFF;
+  width: 70%;
+  font-size: 16pt;
+}
 .btn.search:hover{
   color: #FFF !important;
 }
@@ -120,10 +126,6 @@ body {
 .label-form{
   padding: 2%;
   font-size: 14pt;
-}
-
-input[type="radio"]{
-  visibility: hidden;
 }
 
 select{

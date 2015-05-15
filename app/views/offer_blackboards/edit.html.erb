@@ -1,6 +1,10 @@
-<h1>Editing Offer Blackboard</h1>
+<h1>Eintrag ändern</h1>
 
-<%= render 'form' %>
+  <% if @offer_blackboard.request? %>
+    <%= render 'form_request' %>
+  <% else %>
+    <%= render 'form_offer' %>
+  <% end %>
 
-<%= link_to 'Show', @offer_blackboard %> |
-<%= link_to 'Back', offer_blackboards_path %>
+  <%= link_to 'Show', @offer_blackboard %> |
+  <%= link_to 'Back', offer_blackboards_path %>
