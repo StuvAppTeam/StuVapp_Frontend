@@ -2,12 +2,12 @@
 	<%= text_field_tag :search, params[:search], placeholder: "Suche", class: "search-bar" %> <hr />
 	<div class="col-sm-12">
 		<div class="row">
-			<div class="col-sm-4" style="border-right: 1px solid black">
+			<div class="col-sm-4">
 				<%= label_tag(:condition, "Zustand:  ", class: "label-form") %>
 				<%= select_tag(:condition, options_for_select(['Alles', 'Gebraucht','Neu'])) %>
 			</div>
 
-			<div class="col-sm-4" style="border-right: 1px solid black">
+			<div class="col-sm-4">
 				<%= label_tag(:category, "Kategorie:  ", class: "label-form") %>
 				<%= select_tag(:category, options_from_collection_for_select(Category.all, 'id', 'name'),include_blank: "Alles") %>
 			</div>
