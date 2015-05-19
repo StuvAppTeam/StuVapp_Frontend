@@ -19,9 +19,9 @@
 .dropdown-toggle:visited {
   background-color: #E2001A !important;
 }
-.dropdown:hover .dropdown-menu {
+@media (min-width:480px){.dropdown:hover .dropdown-menu {
   display: block;
-}
+}}
 .dropdown-menu li {
   margin: 5px;
 }
@@ -87,7 +87,7 @@ body {
 .btn-group{
   width: 90%;
   margin-top: 5px;
-  
+
 }
 }
 //auf Tablet und PC
