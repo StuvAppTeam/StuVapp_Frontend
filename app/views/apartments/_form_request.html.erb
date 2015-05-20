@@ -75,8 +75,8 @@
           <%= f.text_field :size %>
           <%= label_tag(:phase, "Phase: ", class: "label-form") %><br>
   				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
-          <%= label_tag(:type, "Wohnungstyp", class: "label-form") %><br>
-  				<%= select_tag(:type, options_for_select(['Alles', 'WG','Wohnung'])) %>
+          <%= label_tag(:apartment_type, "Wohnungstyp", class: "label-form") %><br>
+  				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
           <%= f.label :furnished %><br>
           <%= f.check_box :furnished %>
         </div>

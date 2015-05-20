@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509161522) do
+ActiveRecord::Schema.define(version: 20150520061748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150509161522) do
     t.float    "additionalCost"
     t.string   "phase"
     t.float    "deposit"
-    t.string   "type"
+    t.string   "apartment_type"
     t.datetime "movein"
     t.boolean  "furnished"
     t.boolean  "internet"

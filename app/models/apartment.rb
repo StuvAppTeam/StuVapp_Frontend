@@ -18,6 +18,6 @@ class Apartment < ActiveRecord::Base
       req = false
     end
 
-    where("city ILIKE ? AND phase = ? AND type = ? AND request = ?", key, phase, type, req)
+    where("city ILIKE ? AND phase = ? AND apartment_type = ? AND request = ?", key, phase, type, req)
    end
 end
