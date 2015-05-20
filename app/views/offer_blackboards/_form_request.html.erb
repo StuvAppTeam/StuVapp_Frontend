@@ -55,7 +55,7 @@
                 <%= f.label :condition, "Zustand", class: "control-label", style: "margin-left: 5%;" %>
                 <%= f.check_box :condition %> Neu?
               </div>
-
+              <%= f.hidden_field :request, :value=>true%>
               <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>
           </div>
         </div>
