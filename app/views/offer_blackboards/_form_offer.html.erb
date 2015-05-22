@@ -85,6 +85,7 @@
                 <%= f.label :zipcode, "PLZ", class: "control-label"%>
                 <%= f.number_field :zipcode, class: "form-control" %>
               </div>
+              <%= f.hidden_field :request, :value=>false %>
               <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>
             </div>
           </div>
