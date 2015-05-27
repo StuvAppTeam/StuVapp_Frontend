@@ -53,7 +53,12 @@
         <td>
             <%= link_to offer_blackboard.title, offer_blackboard %>
             <br>
-            <%= offer_blackboard.description %>
+
+              <%  if offer_blackboard.description.length > 25 %>
+                <%=   offer_blackboard.description[0..25] << "..." %>
+                <%else %>
+                <%= offer_blackboard.description %>
+              <% end %>
         </td>
         <td>
             <%= number_to_currency(offer_blackboard.totalPrice, locale: :de) %>

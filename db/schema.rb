@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20150520061748) do
     t.integer  "offer_blackboard_id"
     t.integer  "campus_id"
     t.string   "photo"
-    t.integer  "apartment_id"
+    t.integer  "offer_apartment_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "category_id"
