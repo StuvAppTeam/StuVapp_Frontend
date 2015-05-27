@@ -3,13 +3,13 @@
 	<%= text_field_tag :search, params[:search], placeholder: "Ort", class: "search-bar" %> <hr />
 	<div class="col-sm-12">
 		<div class="row">
-			<div class="col-sm-3" style="border-right: 1px solid black">
+			<div class="col-sm-4">
 				<%= label_tag(:phase, "Phase: ", class: "label-form") %>
 				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
 			</div>
-			<div class="col-sm-5" style="border-right: 1px solid black">
-				<%= label_tag(:type, "Wohnungstyp", class: "label-form") %>
-				<%= select_tag(:type, options_for_select(['Alles', 'WG','Wohnung'])) %>
+			<div class="col-sm-4">
+				<%= label_tag(:apartment_type, "Wohnungstyp:", class: "label-form") %>
+				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
 			</div>
 			<div class="col-sm-4">
         <%= label_tag(:request, "Typ: ", class: "label-form") %>

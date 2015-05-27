@@ -82,9 +82,9 @@
           <%= f.label :size %><br>
           <%= f.text_field :size %>
           <%= label_tag(:phase, "Phase: ", class: "label-form") %><br>
-  				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
-          <%= label_tag(:type, "Wohnungstyp", class: "label-form") %><br>
-  				<%= select_tag(:type, options_for_select(['Alles', 'WG','Wohnung'])) %>
+  				<%= f.select(:phase, [['A', :A], ['B', :B],['Beide', :Beide]]) %>
+          <%= label_tag(:apartment_type, "Wohnungstyp", class: "label-form") %><br>
+  				<%= f.select(:apartment_type, [['Alles', :Alles], ['WG', :WG],['Wohnung', :Wohnung]]) %>
           <%= f.label :movein %><br>
           <%= f.datetime_select :movein %>
           <%= f.label :furnished %><br>
