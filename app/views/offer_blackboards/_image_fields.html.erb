@@ -1,15 +1,15 @@
 <fieldset>
     <div class="row">
-        <div class="col-xs-2">
+        <!--<div class="col-xs-2">
             <% #if image.object.photo %>
                 <% #image_tag image.object.photo.url(:thumb) %>
                 <%# image.object.photo.file.filename %>
             <% #end %>
-        </div>
+        </div>-->
         <div class="col-xs-5">
             <%= f.file_field :photo %>
         </div>
-        <div class="col-xs-5">
+        <div class="col-xs-7">
             <%= f.label :title, "Titel", class:"control-label" %>
             <%= f.text_field :title%>
             <br>
