@@ -69,7 +69,8 @@
             <%end%>
         </td>
         <td>
-            <%= offer_blackboard.created_at.strftime("%d %B %y")%>
+            <%= l(offer_blackboard.created_at, :format => '%d %B %Y') %>
+
         </td>
       </tr>
 

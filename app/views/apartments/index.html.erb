@@ -67,7 +67,7 @@
           <%= number_to_currency(apartment.additionalCost, locale: :de) %>
         </td>
         <td>
-            <%= apartment.created_at.strftime("%d %B %y")%>
+          <%= l(apartment.created_at, :format => '%d %B %Y') %>
         </td>
       </tr>
 
