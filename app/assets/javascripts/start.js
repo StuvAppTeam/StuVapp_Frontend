@@ -70,8 +70,23 @@ var ready = function() {
     });
 
     $('div.setup-panel div a.btn-primary').trigger('click');
+    $('.po-link').popover({
+        trigger: 'hover',
+        html: true,  // must have if HTML is contained in popover
 
-	};
+        // get the title and conent
+        title: function() {
+            return $(this).parent().find('.po-title').html();
+        },
+        content: function() {
+            return $(this).parent().find('.po-body').html();
+        },
+
+        container: 'body',
+        placement: 'right'
+
+    });
+};
 
 	// jQuery bietet ein spezielles Attribut, um zu prüfen, ob die Seite geladen ist
 	$(document).ready(ready);

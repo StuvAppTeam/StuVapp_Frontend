@@ -6,7 +6,20 @@
 			<div class="col-sm-4">
 				<%= label_tag(:phase, "Phase: ", class: "label-form") %>
 				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
-			</div>
+              <a href="#" class="po-link glyphicon glyphicon-info-sign"></a>
+              <div class="po-content hidden">
+                <div class="po-title">
+                  Info
+                </div> <!-- ./po-title -->
+                <div class="po-body">
+                  <p>
+                    <strong>A-Phase:</strong> April - Juni, Oktober - Dezember
+                    <strong>B-Phase:</strong> Januar - März, Juli - September
+                  </p>
+
+                </div><!-- ./po-body -->
+              </div>  <!-- ./po-content -->
+            </div>
 			<div class="col-sm-4">
 				<%= label_tag(:apartment_type, "Wohnungstyp:", class: "label-form") %>
 				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
