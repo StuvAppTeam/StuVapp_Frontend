@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601130147) do
+ActiveRecord::Schema.define(version: 20150601171843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150601130147) do
     t.boolean  "internet"
     t.string   "parking"
     t.integer  "rooms"
-    t.boolean  "somking"
+    t.boolean  "smoking"
     t.boolean  "request"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20150601130147) do
     t.integer  "offer_blackboard_id"
     t.integer  "campus_id"
     t.string   "photo"
-    t.integer  "offer_apartment_id"
+    t.integer  "apartment_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "category_id"
