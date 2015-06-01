@@ -1,61 +1,70 @@
 <p id="notice"><%= notice %></p>
+<div>
+	
+	<div  class="jumbotron">
+		<p>
+	  		<strong>Titel:</strong>
+  			<%= @offer_blackboard.title %>
+		</p>
+		<p>
+  			<strong>Bild:</strong>
+  			<% @offer_blackboard.images.each do |image| %>
+      			<%= image_tag(image.photo.url(:thumb)) %>
+  			<% end %>
+		</p>
+	</div>
+	
+	<div class="jumbotron">
+		<p>
+  			<strong>Beschreibung:</strong>
+  			<%= @offer_blackboard.description %>
+		</p>
+	</div>
+	
 
-<p>
-  <strong>Title:</strong>
-  <%= @offer_blackboard.title %>
-</p>
+	<div class="jumbotron">
+		<p>
+  			<strong>Preis:</strong>
+  			<%= @offer_blackboard.totalPrice %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @offer_blackboard.description %>
-</p>
+		<p>
+  			<strong>Straße:</strong>
+  			<%= @offer_blackboard.street %>
+		</p>
 
-<p>
-  <strong>Totalprice:</strong>
-  <%= @offer_blackboard.totalPrice %>
-</p>
+		<p>
+  			<strong>Stadt:</strong>
+  			<%= @offer_blackboard.city %>
+		</p>
+		<p>
+  			<strong>Postleitzahl:</strong>
+  			<%= @offer_blackboard.zipcode %>
+		</p>
+		<p>
+  			<strong>Kategorie:</strong>
+  			<%= @offer_blackboard.category_id %>
+		</p>
+		<p>
+  			<strong>Zustand:</strong>
+  			<%= @offer_blackboard.condition %>
+		</p>
+	</div>	
+		
+		
+	
+	<p>
+  		<strong>User:</strong>
+  		<%= @offer_blackboard.user_id %>
+	</p>
 
-<p>
-  <strong>Image:</strong>
-  <% @offer_blackboard.images.each do |image| %>
-      <%= image_tag(image.photo.url(:thumb)) %>
-  <% end %>
-</p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @offer_blackboard.street %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @offer_blackboard.city %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @offer_blackboard.zipcode %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @offer_blackboard.user_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @offer_blackboard.category_id %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @offer_blackboard.condition %>
-</p>
-
-<p>
-  <strong>Request:</strong>
-  <%= @offer_blackboard.request %>
-</p>
+	<p>
+  		<strong>Anfrage:</strong>
+  		<%= @offer_blackboard.request %>
+	</p>
+</div>
 
 <%= link_to 'Edit', edit_offer_blackboard_path(@offer_blackboard) %> |
 <%= link_to 'Back', offer_blackboards_path %>
