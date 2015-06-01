@@ -27,6 +27,11 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+    <div class="field">
+      <%= f.label :newsletter,  "Möchten Sie den Newsletter der Stuv erhalten?" %><br />
+      <%= f.check_box :newsletter %>
+    </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :dhbw_news
   resources :categories
   resources :images
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "passwords" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :passwords => "passwords", registrations: 'registrations' }
   resources :offer_blackboards
   resources :mensas
   resources :activities
