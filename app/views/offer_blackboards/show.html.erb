@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div>
 	
-	<div  class="jumbotron">
+	<div>
 		<p>
 	  		<strong>Titel:</strong>
   			<%= @offer_blackboard.title %>
@@ -12,9 +12,6 @@
       			<%= image_tag(image.photo.url(:thumb)) %>
   			<% end %>
 		</p>
-	</div>
-	
-	<div class="jumbotron">
 		<p>
   			<strong>Beschreibung:</strong>
   			<%= @offer_blackboard.description %>
@@ -22,7 +19,7 @@
 	</div>
 	
 
-	<div class="jumbotron">
+	<div>
 		<p>
   			<strong>Preis:</strong>
   			<%= @offer_blackboard.totalPrice %>
