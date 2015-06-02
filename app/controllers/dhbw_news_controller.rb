@@ -74,6 +74,6 @@ class DhbwNewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dhbw_news_params
-      params.require(:dhbw_news).permit(:feedId, :message, :picture, :link, :feedDate)
+      params.require(:dhbw_news).permit(:feedId, :message, :picture, :link, :feedDate, :stuv)
     end
 end
