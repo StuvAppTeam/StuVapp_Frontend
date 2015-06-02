@@ -90,7 +90,7 @@ task :fb_newsfeed => :environment do
         :picture        => picture,
         :link           => feeds.values_at('link')[0],
         :feedDate       => Time.at(feeds.values_at('created_time')[0]).to_datetime,
-        :stuv           => True
+        :stuv           => true
     )
 
     @dhbw_news.save
