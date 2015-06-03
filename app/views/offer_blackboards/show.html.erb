@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div>
   <div class="row">
+  	<div class="search-box">
     <% if @offer_blackboard.images.any? %>
         <div class="col-sm-4" id="carousel-bounding-box">
           <% zaehler = 0 %>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <%end %>
-	<div class="search-box">
+	
 		<p>
 	  		<strong>Titel:</strong>
   			<%= @offer_blackboard.title %>

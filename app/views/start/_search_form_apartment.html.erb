@@ -3,7 +3,7 @@
 	<%= text_field_tag :search, params[:search], placeholder: "Ort", class: "search-bar" %> <hr />
 	<div class="col-sm-12">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3">
 				<%= label_tag(:phase, "Phase: ", class: "label-form") %>
 				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
               <a href="#" class="po-link glyphicon glyphicon-info-sign"></a>
@@ -20,7 +20,7 @@
                 </div><!-- ./po-body -->
               </div>  <!-- ./po-content -->
             </div>
-			<div class="col-sm-4">
+			<div class="col-sm-5">
 				<%= label_tag(:apartment_type, "Wohnungstyp:", class: "label-form") %>
 				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
 			</div>
