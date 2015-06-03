@@ -45,7 +45,7 @@
           </div>
         </div>
         <%end %>
-	
+
 		<p>
 	  		<strong>Titel:</strong>
   			<%= @offer_blackboard.title %>
@@ -64,32 +64,36 @@
 	
 
 	<div class="search-box">
-		<p>
-  			<strong>Preis:</strong>
-  			<%= @offer_blackboard.totalPrice %>
-		</p>
-
-		<p>
-  			<strong>Straße:</strong>
-  			<%= @offer_blackboard.street %>
-		</p>
-
-		<p>
-  			<strong>Stadt:</strong>
-  			<%= @offer_blackboard.city %>
-		</p>
-		<p>
-  			<strong>Postleitzahl:</strong>
-  			<%= @offer_blackboard.zipcode %>
-		</p>
-		<p>
-  			<strong>Kategorie:</strong>
-  			<%= @offer_blackboard.category_id %>
-		</p>
-		<p>
-  			<strong>Zustand:</strong>
-  			<%= @offer_blackboard.condition %>
-		</p>
+		<table>
+		 <tr>
+		   <td>
+  				<strong>Preis:</strong>
+  				<%= @offer_blackboard.totalPrice %>
+		   </td>
+		   <td>
+		   		<strong>Kategorie:</strong>
+  				<%= @offer_blackboard.category_id %>	
+		   </td>
+		   <td>
+  				<strong>Zustand:</strong>
+  				<%= @offer_blackboard.condition %>
+  		   </td>		   
+		 </tr>
+		 <tr>
+		   <td>
+		   		<strong>Straße:</strong>
+  				<%= @offer_blackboard.street %>
+		   </td>
+		   <td>
+  				<strong>Postleitzahl:</strong>
+  				<%= @offer_blackboard.zipcode %>
+		   </td>
+		   <td>
+  				<strong>Stadt:</strong>
+  				<%= @offer_blackboard.city %>
+		   </td>
+		  </tr>
+		</table>
 	</div>	
 		
 		
