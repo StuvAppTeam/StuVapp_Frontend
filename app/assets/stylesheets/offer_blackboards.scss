@@ -55,6 +55,10 @@
 @media(max-width: 768px){.col-sm-4{
   margin-left: 5%;
 }}
+
 .no-border{
-  border-color: transparent !important;
+  border: none !important;
+}
+p{
+  text-align: left;
 }
