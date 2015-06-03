@@ -60,8 +60,14 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
-  border: none !important;
+  border-style: none !important;
 }
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: transparent;
+}
+
 p{
   text-align: left;
   margin-left: 5%;
