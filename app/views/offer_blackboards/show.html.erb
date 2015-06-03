@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-  <div class="row">
+  <div>
   	<div class="search-box">
     <% if @offer_blackboard.images.any? %>
         <div class="col-sm-4" id="carousel-bounding-box">
@@ -46,20 +46,20 @@
         </div>
         <%end %>
 
-		<p>
+		<div>
 	  		<strong>Titel:</strong>
   			<%= @offer_blackboard.title %>
-		</p>
-		<p>
+		</div>
+		<div>
   			<strong>Bild:</strong>
   			<% @offer_blackboard.images.each do |image| %>
       			<%= image_tag(image.photo.url(:thumb)) %>
   			<% end %>
-		</p>
-		<p>
+		</div>
+		<div>
   			<strong>Beschreibung:</strong>
   			<%= @offer_blackboard.description %>
-		</p>
+		</div>
 	</div>
 	
 
@@ -98,7 +98,7 @@
 		
 		
 	
-	<p>
+	<!--><p>
   		<strong>User:</strong>
   		<%= @offer_blackboard.user_id %>
 	</p>
@@ -108,7 +108,7 @@
 	<p>
   		<strong>Anfrage:</strong>
   		<%= @offer_blackboard.request %>
-	</p>
+	</p>-->
 </div>
 
 <%= link_to 'Edit', edit_offer_blackboard_path(@offer_blackboard) %> |
