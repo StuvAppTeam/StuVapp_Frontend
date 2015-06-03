@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
   <div>
-  	<div class="search-box">
+  	<div class="search-box row">
     <% if @offer_blackboard.images.any? %>
         <div class="col-sm-4" id="carousel-bounding-box">
           <% zaehler = 0 %>
@@ -46,19 +46,22 @@
         </div>
         <%end %>
 
-		<div>
-	  		<strong>Titel:</strong>
+		<div class="col-sm-5">
+	  		<p><strong>Titel:</strong>
   			<%= @offer_blackboard.title %>
-		</div>
-		<div>
+  			</p>
+  			<br />
+			<p>
   			<strong>Bild:</strong>
   			<% @offer_blackboard.images.each do |image| %>
       			<%= image_tag(image.photo.url(:thumb)) %>
   			<% end %>
+  			</p>
 		</div>
-		<div>
-  			<strong>Beschreibung:</strong>
+		<div class="col-sm-3">
+  			<p><strong>Beschreibung:</strong>
   			<%= @offer_blackboard.description %>
+  			</p>
 		</div>
 	</div>
 	
