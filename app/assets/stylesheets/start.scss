@@ -23,17 +23,20 @@
 a:link 
 {
 text-decoration: none !important; 
-text-underline: none !important; } 
+text-underline: none !important;
+color: black; } 
 
 a:active 
 { 
 text-decoration: none !important; 
-text-underline: none !important; } 
+text-underline: none !important;
+color: black; } 
 
 a:visited 
 {
 text-decoration: none !important; 
-text-underline: none !important; } 
+text-underline: none !important;
+color: black; } 
 
 a:hover 
 { 
@@ -57,6 +60,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  
 
   height: 100%;
   background-color: #060;
