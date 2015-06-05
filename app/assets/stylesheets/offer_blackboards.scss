@@ -63,11 +63,12 @@
   border-style: none !important;
 }
 
-.p{
-  text-align: left;
+.description{
+  text-align: justify;
   margin-left: 5%;
   margin-bottom: 15px;
   margin-right: 5%;
   margin-bottom: 5%;
+  hyphens: auto;
 }
 
