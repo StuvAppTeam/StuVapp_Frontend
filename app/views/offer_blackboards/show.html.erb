@@ -2,8 +2,15 @@
   <div>
   	<div class="search-box">
   		<div  class="row">
+			<div class="col-sm-12">
+	  			<p><strong>Titel:</strong>
+  					<%= @offer_blackboard.title %>
+  				</p>
+  			</div>
+  			</div>
+  		<div  class="row">
     <% if @offer_blackboard.images.any? %>
-        <div class="col-sm-4" id="carousel-bounding-box">
+        <div class="col-sm-12" id="carousel-bounding-box">
           <% zaehler = 0 %>
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
