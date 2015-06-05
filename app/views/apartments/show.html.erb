@@ -1,103 +1,142 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @apartment.title %>
-</p>
+<div class="search-box">
+  		<div  class="row">
+			<div class="col-sm-12">
+	  			<p><strong>Titel:</strong>
+  					<%= @apartment.title %>
+  				</p>
+  			</div>
+  			</div>
+  		<div  class="row">
+    <% if @apartment.images.any? %>
+        <div class="col-sm-12" id="carousel-bounding-box">
+          <% zaehler = 0 %>
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <% @apartment.images.each do %>
+                  <li data-target="#carousel-example-generic" data-slide-to="<%= zaehler %>" class="active"></li>
+                  <% zaehler += 1 %>
+              <% end %>
+            </ol>
 
-<p>
-  <strong>Description:</strong>
-  <%= @apartment.description %>
-</p>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <% if @apartment.images.any? %>
+                    <%= image_tag(@apartment.images.first.photo.url)%>
+                <%end %>
+                <div class="carousel-caption">
+                  <p><%= @apartment.images.first.title %></p>
+                </div>
+              </div>
+              <% @apartment.images[1..-1].each_with_index do |image, i| %>
+                  <div class="item">
+                    <%= image_tag(image.photo.url) %>
+                    <div class="carousel-caption">
+                      <p><%= image.title%></p>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
 
-<p>
-  <strong>Totalprize:</strong>
-  <%= @apartment.totalPrize %>
-</p>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <%end %>
+		</div>
+		
+		<table class="table">
+		 	<tr>
+		 		<td>
+  					<strong>Miete:</strong>
+  					<%= @apartment.rent %>
+		   		</td>
+		   		<td>
+		   			<strong>Größe (qm):</strong>
+  					<%= @apartment.size %>
+		   		</td>
+		   		<td>
+  					<strong>Phase:</strong>
+  					<%= @apartment.phase %>
+  		   		</td>		   
+		 	</tr>
+		 	<tr>
+		 		<td>
+  					<strong>Straße:</strong>
+  					<%= @apartment.street %>
+		   		</td>
+		   		<td>
+		   			<strong>Postleitzahl:</strong>
+  					<%= @apartment.zipcode %>
+		   		</td>
+		   		<td>
+  					<strong>Stadt:</strong>
+  					<%= @apartment.city %>
+  		   		</td>		   
+		 	</tr>
+		 </table>
+		 <table class="table">
+		 	<tr>
+		 		<td>
+  					<strong>Nebenkosten:</strong>
+  					<%= @apartment.additionalCost %>
+		   		</td>
+		   		<td>
+		   			<strong>Kaution:</strong>
+  					<%= @apartment.deposit %>
+		   		</td>
+		   		<td>
+  					<strong>Typ:</strong>
+  					<%= @apartment.apartment_type %>
+  		   		</td>		   
+		 	</tr>
+		 	<tr>
+		 		<td>
+  					<strong>Anzahl Zimmer:</strong>
+  					<%= @apartment.rooms %>
+		   		</td>
+		   		<td>
+		   			<strong>Einzugsdatum:</strong>
+  					<%= @apartment.movein %>
+		   		</td>
+		   		<td>
+  					<strong>Möbliert:</strong>
+  					<%= @apartment.furnished %>
+  		   		</td>		   
+		 	</tr>
+			<tr>
+		 		<td>
+  					<strong>Internet:</strong>
+  					<%= @apartment.internet %>
+		   		</td>
+		   		<td>
+		   			<strong>Parken:</strong>
+  					<%= @apartment.parking %>
+		   		</td>
+		   		<td>
+  					<strong>Rauchen:</strong>
+  					<%= @apartment.smoking %>
+  		   		</td>		   
+		 	</tr>
+		 </table>
+		 <br />
+		
+		<p class="description">
+  			<strong>Beschreibung:</strong><br />
+  			<%= @apartment.description %>
+		</p>	
+</div>
 
-<p>
-  <strong>Street:</strong>
-  <%= @apartment.street %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @apartment.city %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @apartment.zipcode %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @apartment.user_id %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @apartment.size %>
-</p>
-
-<p>
-  <strong>Rent:</strong>
-  <%= @apartment.rent %>
-</p>
-
-<p>
-  <strong>Additionalcost:</strong>
-  <%= @apartment.additionalCost %>
-</p>
-
-<p>
-  <strong>Phase:</strong>
-  <%= @apartment.phase %>
-</p>
-
-<p>
-  <strong>Deposit:</strong>
-  <%= @apartment.deposit %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @apartment.apartment_type %>
-</p>
-
-<p>
-  <strong>Movein:</strong>
-  <%= @apartment.movein %>
-</p>
-
-<p>
-  <strong>Furnished:</strong>
-  <%= @apartment.furnished %>
-</p>
-
-<p>
-  <strong>Internet:</strong>
-  <%= @apartment.internet %>
-</p>
-
-<p>
-  <strong>Parking:</strong>
-  <%= @apartment.parking %>
-</p>
-
-<p>
-  <strong>Rooms:</strong>
-  <%= @apartment.rooms %>
-</p>
-
-<p>
-  <strong>Smoking:</strong>
-  <%= @apartment.smoking %>
-</p>
-
-<p>
-  <strong>Request:</strong>
-  <%= @apartment.request %>
-</p>
 <%= link_to 'Edit', edit_apartment_path(@apartment) %> |
 <%= link_to 'Back', apartments_path %>
