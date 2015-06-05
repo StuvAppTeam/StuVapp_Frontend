@@ -46,23 +46,28 @@
           </div>
         </div>
         <%end %>
-
-		<div class="col-sm-8">
-	  		<p><strong>Titel:</strong>
-  			<%= @offer_blackboard.title %>
-  			</p>
-			<p>
-  			<strong>Bild:</strong>
-  			<% @offer_blackboard.images.each do |image| %>
-      			<%= image_tag(image.photo.url(:thumb)) %>
-  			<% end %>
-  			</p>
-		</div>
 		</div>
 	</div>
 	
+	
 
 	<div class="search-box">
+		<div class="row">
+			<div class="col-sm-6">
+	  			<p><strong>Titel:</strong>
+  					<%= @offer_blackboard.title %>
+  				</p>
+  			</div>
+  			<div class="col-sm-6">
+				<p>
+  					<strong>Bild:</strong>
+  						<% @offer_blackboard.images.each do |image| %>
+      					<%= image_tag(image.photo.url(:thumb)) %>
+  					<% end %>
+  				</p>
+  			</div>
+		</div>
+		
 		<table class="table">
 		 <tr>
 		   <td>
