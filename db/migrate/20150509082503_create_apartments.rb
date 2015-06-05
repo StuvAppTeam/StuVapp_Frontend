@@ -19,7 +19,7 @@ class CreateApartments < ActiveRecord::Migration
       t.boolean :internet
       t.string :parking
       t.integer :rooms
-      t.boolean :somking
+      t.boolean :smoking
       t.boolean :request
 
       t.timestamps null: false

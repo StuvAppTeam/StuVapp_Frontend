@@ -1,1 +1,1 @@
-json.extract! @apartment, :id, :title, :description, :totalPrize, :street, :city, :zipcode, :user_id, :size, :rent, :additionalCost, :phase, :deposit, :apartment_type, :movein, :furnished, :internet, :parking, :rooms, :somking, :request, :created_at, :updated_at
+json.extract! @apartment, :id, :title, :description, :totalPrize, :street, :city, :zipcode, :user_id, :size, :rent, :additionalCost, :phase, :deposit, :apartment_type, :movein, :furnished, :internet, :parking, :rooms, :smoking, :request, :created_at, :updated_at
