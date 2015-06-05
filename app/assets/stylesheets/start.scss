@@ -24,24 +24,28 @@ a:link
 {
 text-decoration: none !important; 
 text-underline: none !important;
-color: black; } 
+color: black; 
+} 
 
 a:active 
 { 
 text-decoration: none !important; 
 text-underline: none !important;
-color: black; } 
+color: black; 
+} 
 
 a:visited 
 {
 text-decoration: none !important; 
 text-underline: none !important;
-color: black; } 
+color: black; 
+} 
 
 a:hover 
 { 
 text-decoration: none !important; 
-text-underline: none !important; } 
+text-underline: none !important; 
+} 
 
 @media (min-width:480px){.dropdown:hover .dropdown-menu {
   display: block;
