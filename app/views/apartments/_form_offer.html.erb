@@ -61,6 +61,7 @@
           			<%= f.label :deposit, "Kaution", class: "control-label" %><br>
           			<%= f.text_field :deposit, style: "width: 40%; margin-right: 5%;", required: "required" %>
           		</div>
+          </div>
           <div class="row">
           		<div class="col-sm-4">
           			<%= f.label :street, "Straße", class: "control-label" %><br>
@@ -75,7 +76,7 @@
           			<%= f.text_field :city, style: "width: 40%; margin-right: 5%;", required: "required" %>
           		</div>
           </div>
-        </div>
+        
         <% #Nested Form für Image einbindung %>
         <div class="form-group">
           <%= f.fields_for :images do |builder| %>
