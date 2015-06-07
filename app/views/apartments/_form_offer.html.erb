@@ -79,51 +79,51 @@
       <div class="col-md-12">
         <h3>Schritt 3</h3>
         <div class="form-group row">
-          <div class="col-sm-4">	
+          <div class="col-sm-4">
           	<%= f.label :size %><br>
           	<%= f.text_field :size %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= label_tag(:phase, "Phase: ", class: "label-form") %><br>
   			<%= f.select(:phase, [['A', :A], ['B', :B],['Beide', :Beide]]) %>
     	  </div>
-  		 
+
   		  <div class="col-sm-4">
          	<%= label_tag(:apartment_type, "Wohnungstyp", class: "label-form") %><br>
   			<%= f.select(:apartment_type, [['Alles', :Alles], ['WG', :WG],['Wohnung', :Wohnung]]) %>
   		  </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :movein %><br>
-          	<%= f.datetime_select :movein %>
+          	<%= f.date_select :movein %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :furnished %><br>
           	<%= f.check_box :furnished %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :internet %><br>
           	<%= f.check_box :internet %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :parking %><br>
           	<%= f.text_field :parking %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :rooms %><br>
           	<%= f.number_field :rooms %>
           </div>
-          
+
           <div class="col-sm-4">
           	<%= f.label :smoking %><br>
           	<%= f.check_box :smoking %>
           </div>
-          
+
         </div>
         <%= f.hidden_field :request, :value=>false%>
         <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>
