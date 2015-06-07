@@ -25,7 +25,7 @@
             <div class="carousel-inner" role="listbox">
               <div class="item active">
                 <% if @offer_blackboard.images.any? %>
-                    <%= image_tag(@offer_blackboard.images.first.photo.url, class: "slider-size") %>
+                    <%= image_tag(@offer_blackboard.images.first.photo.url) %>
                 <%end %>
                 <div class="carousel-caption">
                   <p><%= @offer_blackboard.images.first.title %></p>
