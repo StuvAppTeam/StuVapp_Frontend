@@ -23,9 +23,9 @@
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-              <div class="item active slider-size">
+              <div class="item active">
                 <% if @offer_blackboard.images.any? %>
-                    <%= image_tag(@offer_blackboard.images.first.photo.url)%>
+                    <%= image_tag(@offer_blackboard.images.first.photo.url, class: "slider-size") %>
                 <%end %>
                 <div class="carousel-caption">
                   <p><%= @offer_blackboard.images.first.title %></p>
