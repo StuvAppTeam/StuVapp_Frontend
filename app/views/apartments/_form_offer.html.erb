@@ -33,12 +33,12 @@
       <div class="col-md-12">
         <h3>Schritt 1</h3>
         <div class="form-group">
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
+          <%= f.label :title, class: "control-label"  %><br>
+          <%= f.text_field :title, class: "form-control",required: "required" %>
         </div>
         <div class="form-group">
-          <%= f.label :description %><br>
-          <%= f.text_area :description, rows: 5 %>
+          <%= f.label :description, "Beschreibung", class: "control-label" %><br>
+          <%= f.text_area :description, rows: 5, class: "form-control" %>
         </div>
         <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
       </div>
@@ -48,20 +48,35 @@
   <div class="row setup-content" id="step-2">
     <div class="col-xs-12">
         <h3> Schritt 2</h3>
-        <div class="form-group">
-          <%= f.label :totalPrize %><br>
-          <%= f.text_field :totalPrize %>
-          <%= f.label :additionalCost %><br>
-          <%= f.text_field :additionalCost %>
-          <%= f.label :deposit %><br>
-          <%= f.text_field :deposit %>
-          <%= f.label :street %><br>
-          <%= f.text_field :street %>
-          <%= f.label :city %><br>
-          <%= f.text_field :city %>
-          <%= f.label :zipcode %><br>
-          <%= f.text_field :zipcode %>
-        </div>
+          <div class=" row form-group">
+                <div class="col-sm-4">
+          			<%= f.label :totalPrize, "Preis", class: "control-label" %><br>
+          			<%= f.text_field :totalPrize, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          		<div class="col-sm-4">
+          			<%= f.label :additionalCost, "zusätzliche Kosten", class: "control-label" %><br>
+          			<%= f.text_field :additionalCost, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          		<div class="col-sm-4">
+          			<%= f.label :deposit, "Kaution", class: "control-label" %><br>
+          			<%= f.text_field :deposit, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          </div>
+          <div class="form-group row">
+          		<div class="col-sm-4">
+          			<%= f.label :street, "Straße", class: "control-label" %><br>
+          			<%= f.text_field :street, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          		<div class="col-sm-4">
+          			<%= f.label :zipcode, "Postleitzahl", class: "control-label" %><br>
+          			<%= f.text_field :zipcode, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          		<div class="col-sm-4">
+          			<%= f.label :city, "Stadt", class: "control-label" %><br>
+          			<%= f.text_field :city, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          		</div>
+          </div>
+
         <% #Nested Form für Image einbindung %>
         <div class="form-group">
           <%= f.fields_for :images do |builder| %>
@@ -85,42 +100,43 @@
           </div>
 
           <div class="col-sm-4">
-          	<%= label_tag(:phase, "Phase: ", class: "label-form") %><br>
+          	<%= f.label :phase, "Phase", class: "control-label" %><br>
   			<%= f.select(:phase, [['A', :A], ['B', :B],['Beide', :Beide]]) %>
     	  </div>
 
   		  <div class="col-sm-4">
-         	<%= label_tag(:apartment_type, "Wohnungstyp", class: "label-form") %><br>
+         	<%= f.label :apartment_type, "Wohnungstyp", class: "control-label" %><br>
   			<%= f.select(:apartment_type, [['Alles', :Alles], ['WG', :WG],['Wohnung', :Wohnung]]) %>
   		  </div>
 
           <div class="col-sm-4">
-          	<%= f.label :movein %><br>
+
+          	<%= f.label :movein, "Einzugsdatum", class: "control-label" %><br>
           	<%= f.date_select :movein %>
           </div>
 
           <div class="col-sm-4">
-          	<%= f.label :furnished %><br>
+          	<%= f.label :furnished, "Möbliert", class: "control-label" %><br>
           	<%= f.check_box :furnished %>
           </div>
 
           <div class="col-sm-4">
-          	<%= f.label :internet %><br>
+          	<%= f.label :internet, "Internet", class: "control-label" %><br>
           	<%= f.check_box :internet %>
           </div>
 
           <div class="col-sm-4">
-          	<%= f.label :parking %><br>
-          	<%= f.text_field :parking %>
+          	<%= f.label :parking, "Parkmöglichkeit", class: "control-label" %><br>
+          	<%= f.text_field :parking, style: "width: 40%; margin-right: 5%;" %>
           </div>
 
           <div class="col-sm-4">
-          	<%= f.label :rooms %><br>
-          	<%= f.number_field :rooms %>
+          	<%= f.label :rooms, "Internet", class: "control-label" %><br>
+          	<%= f.number_field :rooms, style: "width: 40%; margin-right: 5%;" %>
           </div>
 
           <div class="col-sm-4">
-          	<%= f.label :smoking %><br>
+          	<%= f.label :smoking, "Rauchen", class: "control-label" %><br>
           	<%= f.check_box :smoking %>
           </div>
 
