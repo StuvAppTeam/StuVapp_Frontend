@@ -54,14 +54,14 @@
               <div class=" row form-group">
                 <div class="col-sm-4">
                 	<%= f.label :totalPrice, "Preis", class: "control-label" %> <br />
-                	<%= f.text_field :totalPrice ,style: "width: 40%; margin-right: 5%;", required: "required" %> 
+                	<%= f.text_field :totalPrice, style: "width: 40%; margin-right: 5%;", required: "required" %> 
                 </div>
                 <div class="col-sm-4">
                 	<%= f.label :category_id, "Kategorie", class: "control-label" %> <br />
                 	<%= f.select(:category_id, Category.all.collect {|p| [ p.name, p.id ] }) %>
                 </div>
                 <div class="col-sm-4">	
-                <%= f.label :condition, "Zustand", class: "control-label", style: "margin-left: 5%;" %> <br />
+                <%= f.label :condition, "Zustand", class: "control-label" %> <br />
                 <%= f.check_box :condition %> Neu?
                 </div>
               </div>
