@@ -48,6 +48,9 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap-sass-rails (2.2.2.1)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -201,6 +204,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bootstrap-sass (~> 3.3.4)
+  bootstrap-sass-rails (~> 2.2.2.0)
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)

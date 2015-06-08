@@ -337,6 +337,21 @@ html, body {height: 100%;}
 	margin-top: -180px; /* negative value of footer height */
 	height: 180px;
 	clear:both;}
+	
+.footer-list{
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+.footer-list a, .footer-list a:visited, .footer-list a:hover {
+  color: #fff;
+  
+}
+
+.footer-list .dropdown-toggle:hover, .footer-list .dropdown-toggle:visited {
+  background-color: black !important;
+}
+
 
 /*Opera Fix*/
 body:before {/* thanks to Maleika (Kohoutec)*/
