@@ -67,7 +67,11 @@
 		   </td>
 		   <td>
   				<strong>Zustand:</strong>
-  				<%= @offer_blackboard.condition %>
+  				<% if @offer_blackboard.condition = true %>
+  					Gebraucht
+  				<% else %>
+  					Neu
+  				<% end%>
   		   </td>		   
 		 </tr>
 		 <tr>
