@@ -6,21 +6,21 @@
       <div class="row">
 
         <div class ="col-sm-2" style="border-right: 1px solid black">
-          <%= text_field_tag :search, params[:search], placeholder: "Suche", class: "search-bar" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Suche", class: "search-bar", value: params[:search] %>
         </div>
 
         <div class="col-sm-3" style="border-right: 1px solid black">
           <%= label_tag(:condition, "Zustand:  ", class: "label-form") %>
-          <%= select_tag(:condition, options_for_select(['Alles', 'Gebraucht','Neu'])) %>
+          <%= select_tag(:condition, options_for_select(['Alles', 'Gebraucht','Neu'], params[:condition])) %>
         </div>
 
         <div class="col-sm-3">
           <%= label_tag(:category, "Kategorie:  ", class: "label-form") %>
-          <%= select_tag(:category, options_from_collection_for_select(Category.all, 'id', 'name'),include_blank: "Alles") %>
+          <%= select_tag(:category, options_from_collection_for_select(Category.all, 'id', 'name',params[:category]),include_blank: "Alles") %>
         </div>
         <div class="col-sm-2">
           <%= label_tag(:request, "Typ: ", class: "label-form") %>
-          <%= select_tag(:request, options_for_select(['Angebote', 'Gesuche'])) %>
+          <%= select_tag(:request, options_for_select(['Angebote', 'Gesuche'],params[:category])) %>
         </div>
         <div class="col-sm-2">
           <%= submit_tag "Suche", :name => nil, :class => "btn searchbutton"%>

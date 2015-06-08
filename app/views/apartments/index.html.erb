@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 
-
 <%= form_tag apartments_path, :method => "get" do %>
   <div class="col-sm-12">
     <div class="row">
       <div class="col-sm-3" style="border-right: 1px solid black">
-	     <%= text_field_tag :search, params[:search], placeholder: "Ort", class: "search-bar" %>
+	     <%= text_field_tag :search, params[:search], placeholder: "Ort", class: "search-bar", value: params[:search] %>
       </div>
 			<div class="col-sm-2" style="border-right: 1px solid black">
         <%= label_tag(:phase, "Phase: ", class: "label-form") %>
-        <%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
+        <%= select_tag(:phase, options_for_select(['A', 'B','Beide'], params[:phase])) %>
 			</div>
 			<div class="col-sm-3" style="border-right: 1px solid black">
         <%= label_tag(:apartment_type, "Wohnungstyp", class: "label-form") %>
-				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
+				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'], params[:apartment_type])) %>
       </div>
       <div class="col-sm-2">
         <%= label_tag(:request, "Typ: ", class: "label-form") %>
-        <%= select_tag(:request, options_for_select(['Angebote', 'Gesuche'])) %>
+        <%= select_tag(:request, options_for_select(['Angebote', 'Gesuche'], params[:request])) %>
       </div>
       <div class="col-sm-2">
       <%= submit_tag "Suchen", :name => nil, :class => "btn searchbutton"%>
