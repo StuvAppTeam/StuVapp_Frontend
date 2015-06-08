@@ -33,7 +33,7 @@
               <h3>Schritt 1</h3>
               <div class="form-group">
                 <%= f.label :title, class: "control-label" %><br>
-                <%= f.text_field :title, class: "form-control",required: "required" %>
+                <%= f.text_field :title, "Titel *",class: "form-control",required: "required" %>
               </div>
               <div class="form-group">
                   <%= f.label :description, "Beschreibung", class: "control-label" %>
@@ -50,17 +50,17 @@
               <div class="form-group row">
               	
               	<div class="col-sm-4">
-                	<%= f.label :totalPrice, "Preis", class: "control-label" %> <br />
+                	<%= f.label :totalPrice, "Preis *", class: "control-label" %> <br />
                 	<%= f.text_field :totalPrice ,style: "width: 40%; margin-right: 5%;", required: "required" %>
                 </div>
                 
                 <div class="col-sm-4">
-                	<%= f.label :category_id, "Kategorie", class: "control-label" %> <br />
+                	<%= f.label :category_id, "Kategorie *", class: "control-label" %> <br />
                 	<%= f.select(:category_id, Category.all.collect {|p| [ p.name, p.id ] }) %>
                 </div>
                 
                 <div class="col-sm-4">
-                	<%= f.label :condition, "Zustand", class: "control-label", style: "margin-left: 5%;" %> <br />
+                	<%= f.label :condition, "Zustand *", class: "control-label", style: "margin-left: 5%;" %> <br />
                 	<%= f.check_box :condition %> Neu?
                 </div>
                 
