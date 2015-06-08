@@ -6,7 +6,7 @@
   color: #FFFFFF !important;
   border-radius: 0px !important;
 }
-
+//CSS für die Navigation im Header-Menü
 .dropdown-menu {
   background-color: rgba(0,0,0,0.7) !important;
 }
@@ -19,7 +19,15 @@
 .dropdown-toggle:visited {
   background-color: #E2001A !important;
 }
+//Anpassung Header-Menü für Mobile Devices
+@media (min-width:480px){.dropdown:hover .dropdown-menu {
+  display: block;
+}}
+.dropdown-menu li {
+  margin: 5px;
+}
 
+//Allgemeine Definitionen für Links
 a:link 
 {
 text-decoration: none !important; 
@@ -47,12 +55,7 @@ text-decoration: none !important;
 text-underline: none !important; 
 } 
 
-@media (min-width:480px){.dropdown:hover .dropdown-menu {
-  display: block;
-}}
-.dropdown-menu li {
-  margin: 5px;
-}
+
 
 
 
@@ -88,7 +91,10 @@ body {
     font-size: small;
     width:100%;
 }
-//auf dem Handy
+//*************************************************************************************
+//* Darstellung auf Handys                                                            *
+//*************************************************************************************
+
 @media (max-width: 768px) {.search-box{
   background-color:rgba(255,255,255,0.75);
   margin:0 auto;
@@ -97,7 +103,96 @@ body {
   position: relative;
   top: 5%;
 }}
-//auf dem Tablet und PC
+
+
+@media (max-width: 768px) {
+.btn-group{
+  width: 90%;
+  margin-top: 5px;
+
+}}
+
+//auf dem Handy
+@media (max-width: 768px) {.search-bar{
+  width: 90%;
+  font-size: 16pt;
+  font-weight: bold;
+  border: 1px solid #E2001A;
+  border-radius:3px 3px 3px 3px;
+  padding-left: 2px;
+  line-heigt: 12pt;
+}}
+
+//auf dem Handy
+@media (max-width: 768px) {.btn-outlined.btn-theme {
+    background: none;
+    color: #E2001A;
+  border-color: #E2001A;
+  width: 50%;
+    padding:2px 4px;
+    font-size:80%;
+    font-weight: bold;
+    line-height: 3;
+    border-radius:3px;
+}}
+
+//Auf einem Handy
+@media (max-width: 768px) {.btn-outlined.btn-theme:hover,
+.btn-outlined.btn-theme.active {
+    color: #FFF;
+    background: #E2001A !important;
+    border-color: #E2001A;
+    //font-size: 20pt;
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 3;
+    border-radius:3px;
+}}
+
+//auf dem Handy
+@media (max-width: 768px) {.btn.search{
+  background: rgb(226,0,26);
+  color: #FFF;
+  width: 90%;
+  padding:2px 4px;
+    font-size:80%;
+    line-height: 3;
+    border-radius:3px;
+    margin-bottom: 5px;
+}}
+
+//auf dem Handy
+@media (max-width: 768px) {
+.btn.search:hover{
+  color: #FFF !important;
+  padding:2px 4px;
+    font-size:80%;
+    line-height: 3;
+    border-radius:3px;
+}}
+
+@media (max-width: 768px) {
+.label-form{
+  padding: 2%;
+  font-size: 14pt;
+  text-align: left;
+}}
+
+@media (max-width: 768px) {.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}}
+
+
+@media (max-width: 768px) {.col-sm-4 {
+  //width: 33.33333333%;
+  text-align: left !important;
+}}
+
+//*************************************************************************************
+//* Darstellung auf Tablets und PC                                                    *
+//*************************************************************************************
+//Darstellung der Startseiteauf dem Tablet und PC
 @media (min-width: 768px) {.search-box{
   background-color:rgba(255,255,255,0.75);
   margin:0 auto;
@@ -111,14 +206,8 @@ body {
   margin:0 auto;
   width: 50%;
 }
-//auf dem Handy
-@media (max-width: 768px) {
-.btn-group{
-  width: 90%;
-  margin-top: 5px;
 
-}
-}
+
 //auf Tablet und PC
 @media (min-width: 768px) {
 .btn-group{
@@ -127,16 +216,7 @@ body {
 }
 
 
-//auf dem Handy
-@media (max-width: 768px) {.search-bar{
-  width: 90%;
-  font-size: 16pt;
-  font-weight: bold;
-  border: 1px solid #E2001A;
-  border-radius:3px 3px 3px 3px;
-  padding-left: 2px;
-  line-heigt: 12pt;
-}}
+
 
 //auf Tablet und Computer
 @media (min-width: 768px) {.search-bar{
@@ -152,18 +232,7 @@ body {
        -moz-transition: all 0.3s;
             transition: all 0.3s;
 }
-//auf dem Handy
-@media (max-width: 768px) {.btn-outlined.btn-theme {
-    background: none;
-    color: #E2001A;
-  border-color: #E2001A;
-  width: 50%;
-    padding:2px 4px;
-    font-size:80%;
-    font-weight: bold;
-    line-height: 3;
-    border-radius:3px;
-}}
+
 
 //auf dem Tablet
 @media (min-width: 768px) {.btn-outlined.btn-theme {
@@ -173,13 +242,8 @@ body {
   width: 50%;
 }}
 
-//auf dem Computer
-@media (min-width: 992px) {.btn-outlined.btn-theme {
-    background: none;
-    color: #E2001A;
-  border-color: #E2001A;
-  width: 50%;
-}}
+
+
 //Auf einem Tablet
 @media (min-width: 768px) {.btn-outlined.btn-theme:hover,
 .btn-outlined.btn-theme.active {
@@ -188,37 +252,9 @@ body {
     border-color: #E2001A;
 }
 }
-//Auf einem Handy
-@media (max-width: 768px) {.btn-outlined.btn-theme:hover,
-.btn-outlined.btn-theme.active {
-    color: #FFF;
-    background: #E2001A !important;
-    border-color: #E2001A;
-    //font-size: 20pt;
-    padding:2px 4px;
-    font-size:80%;
-    line-height: 3;
-    border-radius:3px;
-}}
-//Auf einem Computer
-@media (min-width: 992px) {.btn-outlined.btn-theme:hover,
-.btn-outlined.btn-theme.active {
-    color: #FFF;
-    background: #E2001A !important;
-    border-color: #E2001A;
-}}
 
-//auf dem Handy
-@media (max-width: 768px) {.btn.search{
-  background: rgb(226,0,26);
-  color: #FFF;
-  width: 90%;
-  padding:2px 4px;
-    font-size:80%;
-    line-height: 3;
-    border-radius:3px;
-    margin-bottom: 5px;
-}}
+
+
 
 //auf dem PC und Tablet
 @media (min-width: 768px) {.btn.search{
@@ -234,15 +270,7 @@ body {
   width: 70%;
   font-size: 16pt;
 }
-//auf dem Handy
-@media (max-width: 768px) {
-.btn.search:hover{
-  color: #FFF !important;
-  padding:2px 4px;
-    font-size:80%;
-    line-height: 3;
-    border-radius:3px;
-}}
+
 
 @media (min-width: 768px) {
 .btn.search:hover{
@@ -255,27 +283,15 @@ body {
   font-size: 14pt;
 }}
 
-@media (max-width: 768px) {
-.label-form{
-  padding: 2%;
-  font-size: 14pt;
-  text-align: left;
-}}
+
 
 @media (min-width: 768px) {.row {
   margin-left: -15px;
   margin-right: -15px;
 }}
 
-@media (max-width: 768px) {.row {
-  margin-left: -5px;
-  margin-right: -5px;
-}}
 
-@media (max-width: 768px) {.col-sm-4 {
-  //width: 33.33333333%;
-  text-align: left !important;
-}}
+
 
 #phase{
   width: 33.333333%;
@@ -318,7 +334,7 @@ hr{
 }
 
 
-//FOOTER
+
 
 * {margin:0;padding:0;}
 
@@ -332,6 +348,9 @@ html, body {height: 100%;}
 
 #main {overflow:auto;
 	padding-bottom: 180px;}  /* must be same height as the footer */
+
+
+//FOOTER
 
 #footer {position: relative;
 	margin-top: -180px; /* negative value of footer height */
