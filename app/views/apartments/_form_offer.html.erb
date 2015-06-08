@@ -55,11 +55,11 @@
           		</div>
           		<div class="col-sm-4">
           			<%= f.label :additionalCost, "zusätzliche Kosten", class: "control-label" %><br>
-          			<%= f.text_field :additionalCost, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          			<%= f.text_field :additionalCost, style: "width: 40%; margin-right: 5%;" %>
           		</div>
           		<div class="col-sm-4">
           			<%= f.label :deposit, "Kaution", class: "control-label" %><br>
-          			<%= f.text_field :deposit, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          			<%= f.text_field :deposit, style: "width: 40%; margin-right: 5%;" %>
           		</div>
           </div>
           <div class="form-group row">
@@ -109,7 +109,7 @@
   			<%= f.select(:apartment_type, [['Alles', :Alles], ['WG', :WG],['Wohnung', :Wohnung]]) %>
   		  </div>
 
-          <div class="col-sm-4">
+          <div class="col-xs-4">
 
           	<%= f.label :movein, "Einzugsdatum", class: "control-label" %><br>
           	<%= f.date_select :movein %>
