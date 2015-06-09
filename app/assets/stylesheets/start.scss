@@ -28,32 +28,32 @@
 }
 
 //Allgemeine Definitionen für Links
-a:link 
+a:link
 {
-text-decoration: none !important; 
+text-decoration: none !important;
 text-underline: none !important;
-//color: black; 
-} 
+//color: black;
+}
 
-a:active 
-{ 
-text-decoration: none !important; 
-text-underline: none !important;
-//color: black; 
-} 
-
-a:visited 
+a:active
 {
-text-decoration: none !important; 
+text-decoration: none !important;
 text-underline: none !important;
-//color: black; 
-} 
+//color: black;
+}
 
-a:hover 
-{ 
-text-decoration: none !important; 
-text-underline: none !important; 
-} 
+a:visited
+{
+text-decoration: none !important;
+text-underline: none !important;
+//color: black;
+}
+
+a:hover
+{
+text-decoration: none !important;
+text-underline: none !important;
+}
 
 
 
@@ -67,7 +67,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  
+
 
   height: 100%;
   background-color: #060;
@@ -227,7 +227,6 @@ body {
 }}
 
 .btn-outlined {
-    border-radius: 0;
     -webkit-transition: all 0.3s;
        -moz-transition: all 0.3s;
             transition: all 0.3s;
@@ -356,7 +355,7 @@ html, body {height: 100%;}
 	margin-top: -180px; /* negative value of footer height */
 	height: 180px;
 	clear:both;}
-	
+
 .footer-list{
   text-align: left;
   margin-bottom: 2%;
@@ -364,7 +363,7 @@ html, body {height: 100%;}
 
 .footer-list a, .footer-list a:visited, .footer-list a:hover {
   color: #fff;
-  
+
 }
 
 .footer-list .dropdown-toggle:hover, .footer-list .dropdown-toggle:visited {

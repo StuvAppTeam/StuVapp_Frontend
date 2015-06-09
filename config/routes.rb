@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'static_pages/apartment_choice'
   get 'static_pages/blackboard_choice'
   get 'static_pages/about'
