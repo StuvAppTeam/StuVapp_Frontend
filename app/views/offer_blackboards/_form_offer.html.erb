@@ -54,13 +54,13 @@
               <div class=" row form-group">
                 <div class="col-sm-4">
                 	<%= f.label :totalPrice, "Preis *", class: "control-label" %> <br />
-                	<%= f.text_field :totalPrice, style: "width: 40%; margin-right: 5%;", required: "required" %> 
+                	<%= f.text_field :totalPrice, style: "width: 40%; margin-right: 5%;", required: "required" %>
                 </div>
                 <div class="col-sm-4">
                 	<%= f.label :category_id, "Kategorie *", class: "control-label" %> <br />
                 	<%= f.select(:category_id, Category.all.collect {|p| [ p.name, p.id ] }) %>
                 </div>
-                <div class="col-sm-4">	
+                <div class="col-sm-4">
                 <%= f.label :condition, "Zustand *", class: "control-label" %> <br />
                 <%= f.check_box :condition %> Neu?
                 </div>
@@ -90,6 +90,10 @@
 
                 <%= f.label :zipcode, "PLZ *", class: "control-label"%>
                 <%= f.number_field :zipcode, class: "form-control", required: "required" %>
+
+                	<%= f.label :phone, "Telefon", class: "control-label" %><br>
+                	<%= f.text_field :phone %>
+
               </div>
               <%= f.hidden_field :request, :value=>false %>
               <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>

@@ -141,6 +141,11 @@
           	<%= f.label :smoking, "Rauchen", class: "control-label" %><br>
           	<%= f.check_box :smoking %>
           </div>
+
+          <div class="col-sm-4">
+          	<%= f.label :phone, "Telefon", class: "control-label" %><br>
+          	<%= f.text_field :phone %>
+          </div>
         </div>
         <%= f.hidden_field :request, :value=>false%>
         <%= f.submit "Speichern",:class => "btn btn-primary btn-lg pull-right", :style => "margin-bottom: 2%;" %>

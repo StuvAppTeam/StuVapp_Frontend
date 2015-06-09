@@ -67,21 +67,13 @@
 		   </td>
 		   <td>
   				<strong>Zustand:</strong>
-<<<<<<< HEAD
   				<% if @offer_blackboard.condition == true %>
-=======
-<<<<<<< HEAD
-  				<%= @offer_blackboard.condition %>
-  		   </td>
-=======
-  				<% if @offer_blackboard.condition = true %>
->>>>>>> dd6761b75271f685445da823445470afa5e1ad4f
   					Gebraucht
   				<% else %>
   					Neu
   				<% end%>
-  		   </td>		   
->>>>>>> 413ff8ac49f7d2cf3dc3016d37707b663373afc2
+  		   </td>
+
 		 </tr>
 		 <tr>
 		   <td>
@@ -108,7 +100,9 @@
         <p class="description">
           <strong>Kontakt:</strong><br />
           <strong>Email: </strong>
-      			<%= @apartment.user.email %>
+      			<%= @offer_blackboard.user.email %>
+          <strong>Telefon:</strong>
+            <%= @offer_blackboard.phone %>
     		</p>
 		</div>
 

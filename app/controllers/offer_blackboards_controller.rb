@@ -89,6 +89,6 @@ class OfferBlackboardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_blackboard_params
-      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :request, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, images_attributes: [:id, :title, :photo, :offer_blackboard_id, :_destroy])
+      params.require(:offer_blackboard).permit(:title, :description, :totalPrice, :request, :image_id, :street, :city, :zipcode, :user_id, :category_id, :condition, :phone, images_attributes: [:id, :title, :photo, :offer_blackboard_id, :_destroy])
     end
 end
