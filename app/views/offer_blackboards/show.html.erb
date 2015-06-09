@@ -54,7 +54,7 @@
         </div>
         <%end %>
 		</div>
-		
+
 		<table class="table">
 		 <tr>
 		   <td>
@@ -63,12 +63,12 @@
 		   </td>
 		   <td>
 		   		<strong>Kategorie:</strong>
-  				<%= @offer_blackboard.category_id %>	
+  				<%= @offer_blackboard.category_id %>
 		   </td>
 		   <td>
   				<strong>Zustand:</strong>
   				<%= @offer_blackboard.condition %>
-  		   </td>		   
+  		   </td>
 		 </tr>
 		 <tr>
 		   <td>
@@ -86,11 +86,18 @@
 		  </tr>
 		</table>
 	<br />
-	
+
   			<p class="description"><strong>Beschreibung:</strong><br />
   			<%= @offer_blackboard.description %>
   			</p>
-		</div>	
+
+
+        <p class="description">
+          <strong>Kontakt:</strong><br />
+          <strong>Email: </strong>
+      			<%= @apartment.user.email %>
+    		</p>
+		</div>
 
 </div>
 
