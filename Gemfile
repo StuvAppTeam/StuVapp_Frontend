@@ -19,6 +19,8 @@ gem 'awesome_print', :require => 'ap'
 
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.4'
+#Gestaltung Devise
+gem "bootstrap-sass-rails", "~> 2.2.2.0"
 #Login mit Devise
 gem 'devise'
 #Facebooklogin
@@ -61,4 +63,3 @@ group :development, :test do
   gem 'spring'
 end
 
-ruby "2.2.0"

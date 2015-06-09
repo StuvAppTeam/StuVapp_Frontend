@@ -111,13 +111,21 @@
 		   		</td>
 		   		<td>
   					<strong>Möbliert:</strong>
-  					<%= @apartment.furnished %>
+  					<% if @apartment.furnished = true %>
+  						Ja
+  					<% else %>
+  						Nein
+  					<% end %>
   		   		</td>
 		 	</tr>
 			<tr>
 		 		<td>
   					<strong>Internet:</strong>
-  					<%= @apartment.internet %>
+  					<% if @apartment.internet = true %>
+  						Ja
+  					<% else %>
+  						Nein
+  					<% end %>
 		   		</td>
 		   		<td>
 		   			<strong>Parken:</strong>
@@ -125,8 +133,12 @@
 		   		</td>
 		   		<td>
   					<strong>Rauchen:</strong>
-  					<%= @apartment.smoking %>
-  		   		</td>
+  					<% if @apartment.smoking = true %>
+  						Ja
+  					<% else %>
+  						Nein
+  					<% end %>
+  		   		</td>		   
 		 	</tr>
 		 </table>
 		 <br />
