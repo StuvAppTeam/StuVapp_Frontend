@@ -111,7 +111,7 @@
 		   		</td>
 		   		<td>
   					<strong>Möbliert:</strong>
-  					<% if @apartment.furnished = true %>
+  					<% if @apartment.furnished == true %>
   						Ja
   					<% else %>
   						Nein
@@ -121,7 +121,7 @@
 			<tr>
 		 		<td>
   					<strong>Internet:</strong>
-  					<% if @apartment.internet = true %>
+  					<% if @apartment.internet == true %>
   						Ja
   					<% else %>
   						Nein
@@ -133,7 +133,7 @@
 		   		</td>
 		   		<td>
   					<strong>Rauchen:</strong>
-  					<% if @apartment.smoking = true %>
+  					<% if @apartment.smoking == true %>
   						Ja
   					<% else %>
   						Nein
