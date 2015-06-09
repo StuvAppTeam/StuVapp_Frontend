@@ -50,8 +50,8 @@
         <h3> Schritt 2</h3>
           <div class=" row form-group">
                 <div class="col-sm-4">
-          			<%= f.label :totalPrize, "Preis *", class: "control-label" %><br>
-          			<%= f.text_field :totalPrize, style: "width: 40%; margin-right: 5%;", required: "required" %>
+          			<%= f.label :rent, "Miete *", class: "control-label" %><br>
+          			<%= f.text_field :rent, style: "width: 40%; margin-right: 5%;", required: "required" %>
           		</div>
           		<div class="col-sm-4">
           			<%= f.label :additionalCost, "zusätzliche Kosten", class: "control-label" %><br>
@@ -108,7 +108,7 @@
          	<%= f.label :apartment_type, "Wohnungstyp", class: "control-label" %><br>
   			<%= f.select(:apartment_type, [['Alles', :Alles], ['WG', :WG],['Wohnung', :Wohnung]]) %>
   		  </div>
-  		</div>  
+  		</div>
 		<div class="form-group row">
           <div class="col-sm-4">
 

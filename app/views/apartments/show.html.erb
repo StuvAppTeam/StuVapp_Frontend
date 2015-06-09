@@ -54,7 +54,7 @@
         </div>
         <%end %>
 		</div>
-		
+
 		<table class="table">
 		 	<tr>
 		 		<td>
@@ -68,7 +68,7 @@
 		   		<td>
   					<strong>Phase:</strong>
   					<%= @apartment.phase %>
-  		   		</td>		   
+  		   		</td>
 		 	</tr>
 		 	<tr>
 		 		<td>
@@ -82,7 +82,7 @@
 		   		<td>
   					<strong>Stadt:</strong>
   					<%= @apartment.city %>
-  		   		</td>		   
+  		   		</td>
 		 	</tr>
 		 </table>
 		 <table class="table">
@@ -98,7 +98,7 @@
 		   		<td>
   					<strong>Typ:</strong>
   					<%= @apartment.apartment_type %>
-  		   		</td>		   
+  		   		</td>
 		 	</tr>
 		 	<tr>
 		 		<td>
@@ -112,7 +112,7 @@
 		   		<td>
   					<strong>Möbliert:</strong>
   					<%= @apartment.furnished %>
-  		   		</td>		   
+  		   		</td>
 		 	</tr>
 			<tr>
 		 		<td>
@@ -126,15 +126,22 @@
 		   		<td>
   					<strong>Rauchen:</strong>
   					<%= @apartment.smoking %>
-  		   		</td>		   
+  		   		</td>
 		 	</tr>
 		 </table>
 		 <br />
-		
+
 		<p class="description">
   			<strong>Beschreibung:</strong><br />
   			<%= @apartment.description %>
-		</p>	
+		</p>
+
+    <p class="description">
+      <strong>Kontakt:</strong><br />
+      <strong>Email: </strong>
+  			<%= @apartment.user.email %>
+		</p>
+
 </div>
 
 
