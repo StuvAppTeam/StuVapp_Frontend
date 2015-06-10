@@ -148,13 +148,23 @@
   			<%= @apartment.description %>
 		</p>
 
-    <p class="description">
-      <strong>Kontakt:</strong><br />
-      <strong>Email: </strong>
-  			<%= @apartment.user.email %>
-      <strong>Telefon:</strong>
-        <%= @apartment.phone %>
-		</p>
+      			
+       <div class="row">
+      		<div class="col-xs-12" id="contact">
+      			<strong>Kontakt:</strong>     			
+      			<div class="row">
+      				<div class="col-xs-6">	
+      			
+      					<strong>Email: </strong>
+  						<%= @apartment.user.email %>
+      				</div>
+      				<div class="col-xs-6">
+      					<strong>Telefon:</strong>
+        				<%= @apartment.phone %>
+        			</div>
+      			</div>
+        </div>
+       	</div>
 
 </div>
 
