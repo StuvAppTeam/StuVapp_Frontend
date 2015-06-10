@@ -85,4 +85,4 @@ production:
 #  host: localhost
   database: StuvApp_Frontend_production
   username: dbuser
-  password: <%= ENV['rails_DATABASE_PASSWORD'] %>
+  password: Rails.application.secrets.rails_DATABASE_PASSWORD
