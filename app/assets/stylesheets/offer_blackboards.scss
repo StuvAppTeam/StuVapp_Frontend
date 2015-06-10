@@ -56,7 +56,7 @@
   margin-left: 5%;
 }}
 
-//Tabellen in bei der Anzeige
+//Tabellen bei show
 .table {
   width: 100%;
   max-width: 100%;
@@ -74,11 +74,19 @@
 }
 
 //Bilder in der Gallerie haben fixe Größe
-.carousel-inner > .item > img{
+@media(min-width: 768px){
+  .carousel-inner > .item > img{
        width:100%;
-       height:500px;
+       height:600px;
        
-     }
+   }}
+@media(max-width: 768px){
+  .carousel-inner > .item > img{
+       width:100%;
+       height:200px;
+       
+   }
+}
 
 //Sowohl für Offer_Blackboard als auch für Apartments werden im Show.html.erb die Kontaktinformationen beeinflusst
 #contact{
