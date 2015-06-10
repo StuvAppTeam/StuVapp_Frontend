@@ -82,7 +82,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  host: localhost
+#  host: localhost
   database: StuvApp_Frontend_production
-  username: rails
+  username: dbuser
   password: <%= ENV['rails_DATABASE_PASSWORD'] %>

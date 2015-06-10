@@ -4,13 +4,13 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '33163dd1ca1c0aab81536142011ff09571dc0cc7f6240a50ed7cd2a2e15c6747cfe200143c72b737f30ef42523fcb990aa85af9b19bcb60cf6fba13706742923'
+  config.secret_key = '33163dd1ca1c0aab81536142011ff09571dc0cc7f6240a50ed7cd2a2e15c6747cfe200143c72b737f30ef42523fcb990aa85af9b19bcb60cf6fba13706742923'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'studify@dhbw-ravensburg.de'
+  config.mailer_sender = 'dhbw.mobilesolutions@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -233,7 +233,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :facebook, "967037029973599", "755e3229b1784c64bd096d479b32555b"
+  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
