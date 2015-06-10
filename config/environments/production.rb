@@ -77,8 +77,8 @@ Rails.application.configure do
       port: 587,
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: ENV["GMAIL_USERNAME"],
-      password: ENV["GMAIL_PASSWORD"]
+      user_name: Rails.application.secrets.GMAIL_USERNAME,
+      password: Rails.application.secrets.GMAIL_PASSWORD
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -94,6 +94,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  ENV['FACEBOOK_APP_ID'];
-  ENV['FACEBOOK_SECRET'];
 end
