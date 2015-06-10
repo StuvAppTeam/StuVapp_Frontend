@@ -97,13 +97,22 @@
   			</p>
 
 
-        <p class="description">
-          <strong>Kontakt:</strong><br />
-          <strong>Email: </strong>
-      			<%= @offer_blackboard.user.email %>
-          <strong>Telefon:</strong>
-            <%= @offer_blackboard.phone %>
-    		</p>
+   <div class="row">
+      		<div class="col-xs-12" id="contact">
+      			<strong>Kontakt:</strong>     			
+      			<div class="row">
+      				<div class="col-xs-6">	
+      			
+      					<strong>Email: </strong>
+  						<%= @offer_blackboard.user.email %>
+      				</div>
+      				<div class="col-xs-6">
+      					<strong>Telefon:</strong>
+        				<%= @offer_blackboard.phone %>
+        			</div>
+      			</div>
+        </div>
+       	</div>
 		</div>
 
 </div>
