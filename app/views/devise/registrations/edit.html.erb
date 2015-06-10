@@ -1,5 +1,5 @@
 <div class="search-box">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= resource_name.to_s.humanize %> ändern</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -14,17 +14,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password, "Passwort"%> <i>(bitte leer lassen, falls das Passwort nicht geändert werden soll)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Passwort bestätigen" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, "aktuelles Passwort" %> <i>(wird benötigt um die Änderungen zu bestätigen)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -40,7 +40,7 @@
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class=>'btn btn-primary' %></p>
+<p>Unhappy? <%= button_to "Account löschen", registration_path(resource_name), data: { confirm: "Sind Sie sicher?" }, method: :delete, :class=>'btn btn-primary' %></p>
 
 <%= link_to "Back", :back %>
 </div>
