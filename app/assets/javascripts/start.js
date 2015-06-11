@@ -70,7 +70,7 @@ var ready = function() {
     });
 
     $('div.setup-panel div a.btn-primary').trigger('click');
-    $('.po-link').popover({
+    $('.po-markup > .po-link').popover({
         trigger: 'hover',
         html: true,  // must have if HTML is contained in popover
 

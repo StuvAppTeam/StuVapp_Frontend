@@ -6,6 +6,7 @@
 			<div class="col-sm-4">
 				<%= label_tag(:phase, "Phase: ", class: "label-form") %> <br />
 				<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
+					<div class="po-markup">
               <a href="#" class="po-link glyphicon glyphicon-info-sign"></a>
               <div class="po-content hidden">
                 <div class="po-title">
@@ -20,6 +21,7 @@
                 </div><!-- ./po-body -->
               </div>  <!-- ./po-content -->
             </div>
+					</div>
 			<div class="col-sm-4">
 				<%= label_tag(:apartment_type, "Wohnungstyp:", class: "label-form") %> <br />
 				<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>

@@ -32,13 +32,13 @@ class OfferBlackboard < ActiveRecord::Base
 
     # Fallunterscheidung für verschiedene Eingaben
     if (category == '' && condition == "Alles")
-      where("title ILIKE ? AND description ILIKE ? AND request = ?" ,  key, key, req)
+      where("title ILIKE ? OR description ILIKE ? AND request = ?" ,  key, key, req)
     elsif (category == '' && condition != "Alles")
-      where("title ILIKE ? AND description ILIKE ? AND condition = ? AND request = ?",  key, key, cond, req)
+      where("title ILIKE ? OR description ILIKE ? AND condition = ? AND request = ?",  key, key, cond, req)
     elsif  condition == "Alles"
-      where("title ILIKE ? AND description ILIKE ? AND category_id = ? AND request = ?", key, key, category, req)
+      where("title ILIKE ? OR description ILIKE ? AND category_id = ? AND request = ?", key, key, category, req)
     elsif condition != "Alles"
-      where("title ILIKE ? AND description ILIKE ? AND category_id = ? AND condition = ? AND request = ?", key, key, category, cond, req)
+      where("title ILIKE ? OR description ILIKE ? AND category_id = ? AND condition = ? AND request = ?", key, key, category, cond, req)
     end
    end
 end

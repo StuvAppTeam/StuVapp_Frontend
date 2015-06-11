@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'offer_blackboards/new_request'
   get 'static_pages/manage_ad'
   get 'static_pages/impressum'
+  get 'static_pages/contact'
   resources :apartments
   resources :campus
   resources :dhbw_news

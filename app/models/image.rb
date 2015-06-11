@@ -5,6 +5,7 @@ class Image < ActiveRecord::Base
   belongs_to :offer_blackboard
   #Beziehung zu Kategorien
   belongs_to :category
+  belongs_to :campu
 
 
   validate :title_without_photo
