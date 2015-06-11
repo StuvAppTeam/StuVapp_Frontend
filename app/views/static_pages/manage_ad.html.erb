@@ -40,7 +40,7 @@
         <td>
           <%= link_to 'Anzeigen', {:controller => "offer_blackboards", :action => 'show', :id => offer_blackboard.id} %> |
           <%= link_to 'Ändern', {:controller => "offer_blackboards", :action => 'edit', :id => offer_blackboard.id} %> |
-          <%= link_to "Löschen", {:controller => "offer_blackboards", :action => 'destroy', :id => offer_blackboard.id}, :confirm => "Eintrag löschen?",:method => :delete %>
+          <%= link_to "Löschen", {:controller => "offer_blackboards", :action => 'destroy', :id => offer_blackboard.id}, data: { confirm: 'Möchten Sie den Eintrag wirklich löschen?' },:method => :delete %>
         </td>
       </tr>
 
@@ -87,7 +87,7 @@
         <td>
           <%= link_to 'Anzeigen', {:controller => "apartments", :action => 'show', :id => apartment.id} %> |
           <%= link_to 'Ändern', {:controller => "apartments", :action => 'edit', :id => apartment.id} %> |
-          <%= link_to "Löschen", {:controller => "apartments", :action => 'destroy', :id => apartment.id}, :confirm => "Eintrag löschen?",:method => :delete %>
+          <%= link_to "Löschen", {:controller => "apartments", :action => 'destroy', :id => apartment.id}, data: { confirm: 'Möchten Sie den Eintrag wirklich löschen?' },:method => :delete %>
         </td>
       </tr>
 
