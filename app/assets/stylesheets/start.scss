@@ -6,6 +6,9 @@
   color: #FFFFFF !important;
   border-radius: 0px !important;
 }
+@media(min-width: 768px){.container-fluid{
+  padding-left: 0px;
+}}
 //CSS für die Navigation im Header-Menü
 .dropdown-menu {
   background-color: rgba(0,0,0,0.7) !important;
