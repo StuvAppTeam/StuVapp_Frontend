@@ -116,6 +116,7 @@
 		</div>
 
 </div>
-
-<%= link_to 'Edit', edit_offer_blackboard_path(@offer_blackboard) %> |
+<% if current_user.present? && @offer_blackboard.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_offer_blackboard_path(@offer_blackboard) %>
+    |<%end%>
 <%= link_to 'Back', :back %>
