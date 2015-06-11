@@ -73,6 +73,6 @@ class CampusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campu_params
-      params.require(:campu).permit(:street, :zipcode, :city, :name, :description, :longitude, :latitude)
+      params.require(:campu).permit(:street, :zipcode, :city, :name, :description, :longitude, :latitude, image_attributes: [:id, :title, :photo, :campu_id, :_destroy,])
     end
 end
