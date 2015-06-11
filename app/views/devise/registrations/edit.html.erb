@@ -12,7 +12,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+      <% if !current_user.provider.present? %>
   <div class="field">
     <%= f.label :password, "Passwort"%> <i>(bitte leer lassen, falls das Passwort nicht geändert werden soll)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
@@ -27,6 +27,7 @@
     <%= f.label :current_password, "aktuelles Passwort" %> <i>(wird benötigt um die Änderungen zu bestätigen)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+          <% end %>
 
     <div class="field">
       <%= f.label :newsletter,  "Möchten Sie den Newsletter der Stuv erhalten?" %><br />
@@ -38,9 +39,9 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Account löschen</h3>
 
-<p>Unhappy? <%= button_to "Account löschen", registration_path(resource_name), data: { confirm: "Sind Sie sicher?" }, method: :delete, :class=>'btn btn-primary' %></p>
+<p>Unzufrieden? <%= button_to "Account löschen", registration_path(resource_name), data: { confirm: "Sind Sie sicher?" }, method: :delete, :class=>'btn btn-primary' %></p>
 
 <%= link_to "Back", :back %>
 </div>
