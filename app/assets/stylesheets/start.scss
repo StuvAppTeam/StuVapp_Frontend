@@ -308,7 +308,7 @@ hr{
 }
 
 
-
+//CSS für die Navigationsleiste
 .navbar a:link {
     text-decoration: none;
     color: #FFFFFF;
@@ -362,14 +362,16 @@ html, body {height: 100%;}
   margin-bottom: 2%;
 }
 
-.footer-list a, .footer-list a:visited, .footer-list a:hover {
+.footer-list a, .footer-list a:visited {
   color: #fff;
 
 }
 
-.footer-list .dropdown-toggle:hover, .footer-list .dropdown-toggle:visited {
-  background-color: black !important;
+.footer-list a:hover{
+  color: #E2001A;
 }
+
+
 
 
 /*Opera Fix*/

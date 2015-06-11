@@ -77,22 +77,22 @@
         <h3>Schritt 3</h3>
         <div class="form-group row">
           <div class="col-sm-4">
-          	<%= f.label :size, "Größe *", class: "control-label"  %>
+          	<%= f.label :size, "Größe *", class: "control-label"  %> <br />
           	<%= f.text_field :size, style: "width: 50%; margin-right: 5%;", required: "required" %>
           </div>
 
           <div class="col-sm-4">
-          	<%= label_tag(:phase, "Phase *: ", class: "label-form") %>
+          	<%= label_tag(:phase, "Phase *: ", class: "control-label") %> <br />
   			<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
   	      </div>
 
   		  <div class="col-sm-4">
-          	<%= label_tag(:apartment_type, "Wohnungstyp *", class: "label-form") %>
+          	<%= label_tag(:apartment_type, "Wohnungstyp *", class: "control-label") %><br />
   			<%= select_tag(:apartment_type, options_for_select(['Alles', 'WG','Wohnung'])) %>
   		  </div>
 
   	 	  <div class="col-sm-4">
-          	<%= f.label :furnished, "Möbliert *" %>
+          	<%= f.label :furnished, "Möbliert *", class: "control-label" %><br />
           	<%= f.check_box :furnished %>
           </div>
 
