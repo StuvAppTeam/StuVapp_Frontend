@@ -2,7 +2,7 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //Wizard css
-.container{
+.container {
   width: 100%;
 }
 
@@ -52,11 +52,9 @@
   margin-right: 2%;
   margin-bottom: 2% !important;
 }
-//@media(max-width: 768px){.col-sm-4{
-//  margin-left: 5%;
-//}}
 
-//Tabellen bei show
+//Tabellen bei show.html.erb
+
 .table {
   width: 100%;
   max-width: 100%;
@@ -70,7 +68,8 @@
 }
 
 //Darstellung Beschreibungstexte für show bei Apartments und Blackboards
-.description{
+
+.description {
   text-align: justify;
   margin-left: 2%;
   margin-right: 5%;
@@ -79,13 +78,16 @@
 }
 
 //Bilder in der Gallerie haben fixe Größe
-@media(min-width: 768px){
+
+@media(min-width: 768px) {
   .carousel-inner > .item > img{
        width:100%;
        height:600px;
        
-   }}
-@media(max-width: 768px){
+   }
+}
+
+@media(max-width: 768px) {
   .carousel-inner > .item > img{
        width:100%;
        height:200px;
@@ -94,7 +96,7 @@
 }
 
 //Sowohl für Offer_Blackboard als auch für Apartments werden im Show.html.erb die Kontaktinformationen beeinflusst
-#contact{
+#contact {
  text-align: left;
  margin-left: 2%; 
  margin-bottom: 2%;
