@@ -76,7 +76,7 @@ class OfferBlackboardsController < ApplicationController
   def destroy
     @offer_blackboard.destroy
     respond_to do |format|
-      format.html { redirect_to offer_blackboards_url, notice: 'Offer blackboard was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Offer blackboard was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

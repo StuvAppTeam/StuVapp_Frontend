@@ -78,7 +78,7 @@ class ApartmentsController < ApplicationController
   def destroy
     @apartment.destroy
     respond_to do |format|
-      format.html { redirect_to apartments_url, notice: 'Apartment was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Apartment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
