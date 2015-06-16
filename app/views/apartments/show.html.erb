@@ -70,6 +70,7 @@
   					<%= @apartment.phase %>
   		   		</td>
 		 	</tr>
+     <% if @apartment.request == false %>
 		 	<tr>
 		 		<td>
   					<strong>Straße:</strong>
@@ -84,16 +85,19 @@
   					<%= @apartment.city %>
   		   		</td>
 		 	</tr>
-		
+       <% end %>
+
 		 	<tr>
 		 		<td>
   					<strong>Nebenkosten:</strong>
   					<%= @apartment.additionalCost %>
 		   		</td>
+           <% if @apartment.request == false %>
 		   		<td>
 		   			<strong>Kaution:</strong>
   					<%= @apartment.deposit %>
 		   		</td>
+           <% end %>
 		   		<td>
   					<strong>Typ:</strong>
   					<%= @apartment.apartment_type %>
@@ -104,10 +108,12 @@
   					<strong>Anzahl Zimmer:</strong>
   					<%= @apartment.rooms %>
 		   		</td>
+         <% if @apartment.request == false %>
 		   		<td>
 		   			<strong>Einzugsdatum:</strong>
   					<%= l(@apartment.movein, :format => '%d %B %Y') %>
 		   		</td>
+          <% end %>
 		   		<td>
   					<strong>Möbliert:</strong>
   					<% if @apartment.furnished == true %>
@@ -117,6 +123,7 @@
   					<% end %>
   		   		</td>
 		 	</tr>
+       <% if @apartment.request == false %>
 			<tr>
 		 		<td>
   					<strong>Internet:</strong>
@@ -139,21 +146,22 @@
   					<% end %>
   		   		</td>
 		 	</tr>
+       <% end %>
 		 </table>
-		
+
 
 		<p class="description">
   			<strong>Beschreibung:</strong><br />
   			<%= @apartment.description %>
 		</p>
 
-      			
+
        <div class="row">
       		<div class="col-xs-12" id="contact">
-      			<strong>Kontakt:</strong>     			
+      			<strong>Kontakt:</strong>
       			<div class="row">
-      				<div class="col-xs-6">	
-      			
+      				<div class="col-xs-6">
+
       					<strong>Email: </strong>
   						<%= @apartment.user.email %>
       				</div>

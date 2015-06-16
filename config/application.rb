@@ -26,5 +26,8 @@ module StuvAppFrontend
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => '*'
       })
+    # Verhindern der Felverschiebung bei falscher Eingabe in der Registrierung
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    
   end
 end
