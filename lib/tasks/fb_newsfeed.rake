@@ -8,6 +8,7 @@ task :fb_newsfeed => :environment do
   # Authentifizierung findet über AppId und AppSecret statt (Abrufbar im Facebook Developer Bereich)
   @oauth = Koala::Facebook::OAuth.new(Rails.application.secrets.FACEBOOK_APP_ID, Rails.application.secrets.FACEBOOK_SECRET)
   oauth_access_token = @oauth.get_app_access_token
+
   @graph = Koala::Facebook::API.new(oauth_access_token)
 
 
