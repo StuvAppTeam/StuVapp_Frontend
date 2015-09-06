@@ -15,7 +15,7 @@ task :fb_newsfeed => :environment do
   feed = @graph.get_connections("DHBWRAVENSBURG", "feed",{since: 1.month.ago.to_i, date_format: :U})
   # Leeren des bisherigen Datenbestands
   DhbwNews.delete_all
-
+  feed = feed.take(20)
   feed.each do |feeds|
 
     # Prüfung, ob ein Objekt abrufbar ist
@@ -64,6 +64,7 @@ task :fb_newsfeed => :environment do
   # Syntax und Funktionsweise gleich dem Laden des DHBW Feeds
   # Kommentare siehe andere Funktion
   feed = @graph.get_connections("stuvrav", "feed",{date_format: :U})
+  feed = feed.take(20)
   feed.each do |feeds|
 
     if feeds.has_key?("object_id")

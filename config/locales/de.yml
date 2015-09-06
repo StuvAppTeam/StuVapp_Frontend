@@ -202,3 +202,9 @@ de:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       short: "%d. %B, %H:%M Uhr"
     pm: nachmittags
+
+  errors:
+    messages:
+      wrong_size: "falsche Größe (Die Größe sollte %{file_size} betragen)"
+      size_too_small: "zu klein (Die Größe sollte mindestens %{file_size} betragen)"
+      size_too_big: "zu groß (Die Größe sollte höchstens %{file_size} betragen)"
