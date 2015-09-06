@@ -347,12 +347,14 @@ hr {
 //Anpassung Header-Menü für Mobile Devices
 
 @media (min-width:480px){.dropdown:hover .dropdown-menu {
-  display: block;
+  //display: block;
   }
 }
 
+
 .dropdown-menu li {
   margin: 5px;
+  text-align: center !important;
 }
 
 

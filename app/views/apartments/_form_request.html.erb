@@ -58,12 +58,11 @@
           	<%= f.label :additionalCost, "zusätzliche Kosten", class: "control-label" %> <br />
           	<%= f.text_field :additionalCost, style: "width: 50%; margin-right: 5%;", required: "required" %>
           </div>
-        </div>
-        <div class="form-group">
           <div class="col-sm-4">
-            <%= f.label :city, "Stadt", class: "control-label" %> <br />
+            <%= f.label :city, "Stadt *", class: "control-label" %> <br />
           	<%= f.text_field :city, style: "width: 50%; margin-right: 5%;", required: "required" %>
           </div>
+        </div>
         <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
         </div>
     </div>
@@ -82,7 +81,7 @@
 
           <div class="col-sm-4">
           	<%= label_tag(:phase, "Phase *: ", class: "control-label") %> <br />
-  			<%= select_tag(:phase, options_for_select(['A', 'B','Beide'])) %>
+  			    <%= f.select(:phase, [['A', :A], ['B', :B],['Beide', :Beide]]) %>
   	      </div>
 
   		  <div class="col-sm-4">

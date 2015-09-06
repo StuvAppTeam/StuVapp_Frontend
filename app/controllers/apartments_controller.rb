@@ -4,7 +4,7 @@ class ApartmentsController < ApplicationController
   #Nur eigene Eintraege duerfen Editiert und gelöscht werden
   before_action :authorize, :only => [:edit, :destroy]
   before_action :set_apartment, only: [:show, :edit, :update, :destroy, :choose]
-
+  
   def authorize
     @apartment = Apartment.find(params[:id])
     unless @apartment.user_id == current_user.id
