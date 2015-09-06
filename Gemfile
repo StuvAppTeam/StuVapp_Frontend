@@ -18,6 +18,8 @@ gem 'awesome_print', :require => 'ap'
 
 gem 'activeadmin'
 
+#Gem für Kontakformular / Mails
+gem 'mail_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 #Bootstrap
