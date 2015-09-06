@@ -59,12 +59,11 @@
           	<%= f.text_field :additionalCost, style: "width: 50%; margin-right: 5%;", required: "required" %>
           </div>
         </div>
-        <% #Nested Form für Image einbindung %>
         <div class="form-group">
-          <%= f.fields_for :images do |builder| %>
-              <%= render 'image_fields', f: builder %>
-          <% end %>
-          <%= link_to_add_fields "Bild hinzufügen", f, :images %>
+          <div class="col-sm-4">
+            <%= f.label :city, "Stadt", class: "control-label" %> <br />
+          	<%= f.text_field :city, style: "width: 50%; margin-right: 5%;", required: "required" %>
+          </div>
         <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" style="margin-bottom: 2%;">Weiter</button>
         </div>
     </div>

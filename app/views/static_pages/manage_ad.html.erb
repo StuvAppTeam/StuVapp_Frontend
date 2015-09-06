@@ -86,7 +86,7 @@
         </td>
         <td>
           <%= link_to 'Anzeigen', {:controller => "apartments", :action => 'show', :id => apartment.id} %> |
-          <%= link_to 'Ändern', {:controller => "apartments", :action => 'edit', :id => apartment.id} %> |
+          <%= link_to 'Ändern', {edit_apartment_path(apartment.it), :class => 'action'} %> |
           <%= link_to "Löschen", {:controller => "apartments", :action => 'destroy', :id => apartment.id}, data: { confirm: 'Möchten Sie den Eintrag wirklich löschen?' },:method => :delete %>
         </td>
       </tr>
