@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources "contact_form", only: [:new, :create]
+  resources :contact_forms
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'static_pages/apartment_choice'
