@@ -35,7 +35,6 @@ def self.find_for_facebook_oauth(auth, signed_in_resource = nil)
     return registered_user if registered_user
 
     user = User.new(
-                   name:auth.extra.raw_info.name,
                    provider:auth.provider,
                    uid:auth.uid,
                    email:auth.info.email,
