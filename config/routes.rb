@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  match '/contact_forms', to: 'contact_forms#create', via: 'post'
   resources :contact_forms
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
