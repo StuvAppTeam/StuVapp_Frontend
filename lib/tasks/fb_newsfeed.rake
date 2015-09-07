@@ -76,7 +76,9 @@ task :fb_newsfeed => :environment do
 
     if event != {} && event[0].values_at("type")[0] == "event"
       cover =  @graph.get_object(feeds.values_at('object_id')[0],{fields: "cover"}).values_at("cover")
+      if cover[0]
       picture = cover[0].values_at("source")[0]
+      end
     else
       picture = @graph.get_picture(feeds.values_at('object_id')[0])
     end
